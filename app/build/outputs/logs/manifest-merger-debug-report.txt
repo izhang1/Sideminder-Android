@@ -32,6 +32,7 @@ MERGED from [com.android.support:support-v4:23.3.0] /Users/izhang/Desktop/Progra
 MERGED from [com.android.support:support-v4:23.3.0] /Users/izhang/Desktop/Programming Work/Sideminder2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.3.0] /Users/izhang/Desktop/Programming Work/Sideminder2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.3.0] /Users/izhang/Desktop/Programming Work/Sideminder2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] /Users/izhang/Desktop/Programming Work/Sideminder2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
 	android:supportsRtl
 		ADDED from /Users/izhang/Desktop/Programming Work/Sideminder2/app/src/main/AndroidManifest.xml:9:9-35
 	android:label
@@ -79,6 +80,8 @@ MERGED from [com.android.support:support-v4:23.3.0] /Users/izhang/Desktop/Progra
 MERGED from [com.android.support:support-v4:23.3.0] /Users/izhang/Desktop/Programming Work/Sideminder2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.3.0] /Users/izhang/Desktop/Programming Work/Sideminder2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:recyclerview-v7:23.3.0] /Users/izhang/Desktop/Programming Work/Sideminder2/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] /Users/izhang/Desktop/Programming Work/Sideminder2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43
+MERGED from [com.github.satyan:sugar:1.4] /Users/izhang/Desktop/Programming Work/Sideminder2/app/build/intermediates/exploded-aar/com.github.satyan/sugar/1.4/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-v4:23.3.0] /Users/izhang/Desktop/Programming Work/Sideminder2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		INJECTED from /Users/izhang/Desktop/Programming Work/Sideminder2/app/src/main/AndroidManifest.xml
