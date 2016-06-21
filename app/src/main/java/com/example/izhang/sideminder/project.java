@@ -1,11 +1,13 @@
 package com.example.izhang.sideminder;
 
+import com.orm.SugarRecord;
+
 import java.util.Date;
 
 /**
  * Created by izhang on 6/21/16.
  */
-public class project {
+public class project extends SugarRecord {
     private Date dueDate; // When the project should be due
     private int reminderInterval; // The interval that the user should be notificed of the project
     private String title; // Name of the side project
