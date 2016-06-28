@@ -43,7 +43,6 @@ public class project extends SugarRecord {
 
     // Setters
 
-
     public void setDescription(String description) {
         this.description = description;
     }
