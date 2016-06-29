@@ -1,4 +1,4 @@
-package com.example.izhang.sideminder;
+package com.app.izhang.sideminder;
 
 import org.junit.Test;
 

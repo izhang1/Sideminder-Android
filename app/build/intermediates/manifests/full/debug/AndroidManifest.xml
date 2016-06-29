@@ -8,6 +8,19 @@
         android:minSdkVersion="21"
         android:targetSdkVersion="23" />
 
+    <meta-data
+        android:name="DATABASE"
+        android:value="sideminder_database.db" />
+    <meta-data
+        android:name="VERSION"
+        android:value="1" />
+    <meta-data
+        android:name="QUERY_LOG"
+        android:value="true" />
+    <meta-data
+        android:name="DOMAIN_PACKAGE_NAME"
+        android:value="com.app.izhang.sideminder" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,7 +28,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.izhang.sideminder.home"
+            android:name="com.app.izhang.sideminder.view.home"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
