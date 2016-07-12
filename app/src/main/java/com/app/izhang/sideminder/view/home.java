@@ -5,13 +5,21 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.app.izhang.sideminder.R;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class home extends AppCompatActivity {
+
+    ListView homeList = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,14 +28,20 @@ public class home extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        homeList = (ListView) this.findViewById(R.id.homeList);
+
+        homeListAdapter adapter = new homeListAdapter(this, getProjectName());
+
+        System.out.print(getProjectName().toString());
+        Log.d("Check", "test");
+
+//        ArrayList nameList = new ArrayList();
+//        nameList.add("Project 1");
+//        ArrayAdapter adapter2 = new ArrayAdapter<String>(
+//                this, android.R.layout.simple_list_item_1 ,nameList);
+
+        homeList.setAdapter(adapter);
+
     }
 
     @Override
@@ -50,5 +64,21 @@ public class home extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void initHomePage(){
+        homeList = (ListView) this.findViewById(R.id.homeList);
+    }
+
+    private String[] getProjectName(){
+        String[] list ={
+                "Project 1",
+                "Project 2",
+                "Project 3",
+                "Project 4",
+                "Project 5",
+        };
+
+        return list;
     }
 }
