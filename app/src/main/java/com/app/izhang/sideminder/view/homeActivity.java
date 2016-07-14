@@ -17,7 +17,7 @@ import com.app.izhang.sideminder.R;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class home extends AppCompatActivity {
+public class homeActivity extends AppCompatActivity implements homeView {
 
     ListView homeList = null;
 
@@ -34,12 +34,7 @@ public class home extends AppCompatActivity {
 
         System.out.print(getProjectName().toString());
         Log.d("Check", "test");
-
-//        ArrayList nameList = new ArrayList();
-//        nameList.add("Project 1");
-//        ArrayAdapter adapter2 = new ArrayAdapter<String>(
-//                this, android.R.layout.simple_list_item_1 ,nameList);
-
+        
         homeList.setAdapter(adapter);
 
     }
@@ -70,7 +65,8 @@ public class home extends AppCompatActivity {
         homeList = (ListView) this.findViewById(R.id.homeList);
     }
 
-    private String[] getProjectName(){
+    @Override
+    public String[] getProjectName(){
         String[] list ={
                 "Project 1",
                 "Project 2",
