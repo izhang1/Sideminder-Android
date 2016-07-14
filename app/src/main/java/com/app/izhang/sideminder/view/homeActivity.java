@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.app.izhang.sideminder.R;
 
@@ -19,7 +20,8 @@ import java.util.ArrayList;
 
 public class homeActivity extends AppCompatActivity implements homeView {
 
-    ListView homeList = null;
+    private ListView homeList = null;
+    private FloatingActionButton addProjFab = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +31,17 @@ public class homeActivity extends AppCompatActivity implements homeView {
         setSupportActionBar(toolbar);
 
         homeList = (ListView) this.findViewById(R.id.homeList);
+        addProjFab = (FloatingActionButton) this.findViewById(R.id.homeFab);
 
         homeListAdapter adapter = new homeListAdapter(this, getProjectName());
-
-        System.out.print(getProjectName().toString());
-        Log.d("Check", "test");
-        
         homeList.setAdapter(adapter);
+
+        addProjFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Add A New Project", Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
 
