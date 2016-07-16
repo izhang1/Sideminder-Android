@@ -625,13 +625,13 @@ int id enterAlwaysCollapsed 0x7f0c0016
 int id exitUntilCollapsed 0x7f0c0017
 int id expand_activities_button 0x7f0c003e
 int id expanded_menu 0x7f0c0051
-int id fab 0x7f0c006a
 int id fill 0x7f0c002e
 int id fill_horizontal 0x7f0c002f
 int id fill_vertical 0x7f0c0022
 int id fixed 0x7f0c0038
 int id home 0x7f0c0004
 int id homeAsUp 0x7f0c000f
+int id homeFab 0x7f0c006a
 int id homeList 0x7f0c006b
 int id icon 0x7f0c0042
 int id ifRoom 0x7f0c0035
