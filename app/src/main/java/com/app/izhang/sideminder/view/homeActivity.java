@@ -18,7 +18,7 @@ import com.app.izhang.sideminder.R;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class homeActivity extends AppCompatActivity implements homeView {
+public class homeActivity extends AppCompatActivity implements homeView, FloatingActionButton.OnClickListener{
 
     private ListView homeList = null;
     private FloatingActionButton addProjFab = null;
@@ -36,12 +36,8 @@ public class homeActivity extends AppCompatActivity implements homeView {
         homeListAdapter adapter = new homeListAdapter(this, getProjectName());
         homeList.setAdapter(adapter);
 
-        addProjFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Add A New Project", Toast.LENGTH_LONG).show();
-            }
-        });
+        addProjFab.setOnClickListener(this);
+
 
     }
 
@@ -82,5 +78,11 @@ public class homeActivity extends AppCompatActivity implements homeView {
         };
 
         return list;
+    }
+
+    @Override
+    public void onClick(View v){
+        // Assumes FAB button was clicked
+        Toast.makeText(getApplicationContext(), "FAB button clicked", Toast.LENGTH_LONG).show();
     }
 }
