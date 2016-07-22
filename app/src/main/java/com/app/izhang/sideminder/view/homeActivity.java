@@ -118,7 +118,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         dialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
+                Toast.makeText(getApplicationContext(), "Canceled Project Dialog", Toast.LENGTH_LONG).show();
             }
         });
 
