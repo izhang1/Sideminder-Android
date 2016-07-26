@@ -98,7 +98,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
 
         LayoutInflater inflater = this.getLayoutInflater();
-        View dialogView = inflater.inflate(R.layout.addproject_dialog, null);
+        View dialogView = inflater.inflate(R.layout.addproject_dialog,null);
 
         final TextView projNameTV = (TextView) dialogView.findViewById(R.id.projName);
         final TextView projDescriptionTV = (TextView) dialogView.findViewById(R.id.projDesc);
@@ -124,6 +124,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         });
 
         AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         alertDialog.show();
     }
 }
