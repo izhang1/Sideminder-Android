@@ -104,6 +104,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         final TextView projDescriptionTV = (TextView) dialogView.findViewById(R.id.projDesc);
 
         dialogBuilder.setView(dialogView);
+        dialogBuilder.setTitle("Add New Project");
 
         dialogBuilder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
             @Override
