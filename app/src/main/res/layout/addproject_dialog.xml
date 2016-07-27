@@ -19,6 +19,14 @@
         android:hint="Project Description"
         android:layout_marginTop="8dp" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reminder Intervals (In Days)"
+        android:id="@+id/deadlingSpinTitle"
+        android:layout_margin="5dp"
+        android:layout_marginTop="5dp" />
+
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
