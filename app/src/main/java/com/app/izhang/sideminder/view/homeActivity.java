@@ -158,7 +158,6 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
             @Override
             public void onClick(View v) {
                 setDateTimeField();
-                deadlinePicker.show();
             }
         });
 
@@ -196,6 +195,8 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
             }
 
         }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
+
+        deadlinePicker.show();
     }
 
     private void saveData(String projName, String projDescription, String projInterval, String projDeadline){
