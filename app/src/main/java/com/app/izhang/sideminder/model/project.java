@@ -13,6 +13,10 @@ public class project extends SugarRecord {
     private String title; // Name of the side project
     private String description; // Description of side project
 
+    public project(){
+
+    }
+
     public project(Date dueDate, int reminderInterval, String title, String description){
         this.dueDate = dueDate;
         this.reminderInterval = reminderInterval;

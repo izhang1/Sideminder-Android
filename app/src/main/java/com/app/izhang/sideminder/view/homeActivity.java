@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import com.app.izhang.sideminder.R;
 import com.app.izhang.sideminder.model.project;
+import com.orm.SugarContext;
 
 import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
@@ -50,7 +51,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        SugarContext.init(this);
         homeList = (ListView) this.findViewById(R.id.homeList);
         addProjFab = (FloatingActionButton) this.findViewById(R.id.homeFab);
 
@@ -68,6 +69,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
 
         sdf = new SimpleDateFormat(DATE_FORMAT);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -200,7 +202,10 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         Date date = new Date(projDeadline);
         int projIntInterval = Integer.parseInt(projInterval);
         project newProject = new project(date, projIntInterval, projName, projDescription);
-        Log.v("Saving Data", newProject.toString());
+        //Log.v("Saving Data", newProject.toString());
+        //newProject.save();
+        project newProjectTest = project.findById(project.class, 1);
+        Log.v("Get Data", newProjectTest.toString());
 
     }
 
