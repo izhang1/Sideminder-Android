@@ -9,7 +9,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/projName"
         android:layout_gravity="center_horizontal"
-        android:hint="Project Name" />
+        android:hint="Project Name"
+        android:singleLine="true"
+        android:selectAllOnFocus="false"
+        android:maxLength="40"
+        android:inputType="text" />
 
     <EditText
         android:layout_width="match_parent"
@@ -17,7 +21,11 @@
         android:id="@+id/projDesc"
         android:layout_gravity="center_horizontal"
         android:hint="Project Description"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:singleLine="true"
+        android:maxLength="120"
+        android:inputType="text"
+        android:allowUndo="true" />
 
     <TextView
         android:layout_width="match_parent"
@@ -25,7 +33,8 @@
         android:text="Reminder Intervals (In Days)"
         android:id="@+id/deadlingSpinTitle"
         android:layout_margin="5dp"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+        android:textSize="15dp" />
 
     <Spinner
         android:layout_width="match_parent"
@@ -34,7 +43,8 @@
         android:layout_gravity="center_horizontal|left"
         android:spinnerMode="dropdown"
         android:layout_margin="5dp"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:popupElevation="4dp" />
 
     <EditText
         android:layout_width="match_parent"
