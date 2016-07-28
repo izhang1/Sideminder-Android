@@ -24,12 +24,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.izhang.sideminder.R;
+import com.app.izhang.sideminder.model.project;
 
 import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class homeActivity extends AppCompatActivity implements homeView, FloatingActionButton.OnClickListener{
@@ -195,7 +197,11 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
     }
 
     private void saveData(String projName, String projDescription, String projInterval, String projDeadline){
-        Log.v("Saving Data", "Project Name: " + projName + " \nProjection Description: " + projDescription + " \nProject Interval: " + projInterval + "\nProject Deadline: " + projDeadline);
+        Date date = new Date(projDeadline);
+        int projIntInterval = Integer.parseInt(projInterval);
+        project newProject = new project(date, projIntInterval, projName, projDescription);
+        Log.v("Saving Data", newProject.toString());
+
     }
 
 }
