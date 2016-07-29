@@ -4,7 +4,6 @@ import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -20,16 +19,13 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.izhang.sideminder.R;
-import com.app.izhang.sideminder.model.project;
+import com.app.izhang.sideminder.model.Project;
 import com.orm.SugarContext;
 
-import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
@@ -44,6 +40,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
     private SimpleDateFormat sdf;
     private DatePickerDialog deadlinePicker;
     private EditText projDeadlineDate;
+    private homeListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +52,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         homeList = (ListView) this.findViewById(R.id.homeList);
         addProjFab = (FloatingActionButton) this.findViewById(R.id.homeFab);
 
-        homeListAdapter adapter = new homeListAdapter(this, getProjectName());
-        homeList.setAdapter(adapter);
+        setAdapter();
 
         addProjFab.setOnClickListener(this);
 
@@ -98,21 +94,14 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
     }
 
     @Override
-    public String[] getProjectName(){
-        String[] list ={
-                "Project 1",
-                "Project 2",
-                "Project 3",
-                "Project 4",
-                "Project 5",
-        };
-
+    public List<Project> getProjectName(){
+        List<Project> list = Project.listAll(Project.class);
         return list;
     }
 
     public String[] getIntervalList(){
         String[] list = {
-            "1",
+                    "1",
                     "2",
                     "3",
                     "5",
@@ -202,12 +191,20 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
     private void saveData(String projName, String projDescription, String projInterval, String projDeadline){
         Date date = new Date(projDeadline);
         int projIntInterval = Integer.parseInt(projInterval);
-        project newProject = new project(date, projIntInterval, projName, projDescription);
-        //Log.v("Saving Data", newProject.toString());
-        //newProject.save();
-        project newProjectTest = project.findById(project.class, 1);
-        Log.v("Get Data", newProjectTest.toString());
+        Project newProject = new Project(date, projIntInterval, projName, projDescription);
+        newProject.save();
+        setAdapter();
+    }
 
+    private void setAdapter(){
+        // TODO: 7/28/16 Pretty crude way of doing this...seek alternate way if possible
+        List<Project> projectsLists = getProjectName();
+        String temp[] = new String[projectsLists.size()];
+        for(int i = 0; i < projectsLists.size(); i++){
+            temp[i] = projectsLists.get(i).getTitle();
+        }
+        adapter = new homeListAdapter(this, projectsLists, temp);
+        homeList.setAdapter(adapter);
     }
 
 }

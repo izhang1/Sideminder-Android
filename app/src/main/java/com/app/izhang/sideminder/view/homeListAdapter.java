@@ -9,17 +9,20 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.app.izhang.sideminder.R;
+import com.app.izhang.sideminder.model.Project;
+
+import java.util.List;
 
 public class homeListAdapter extends ArrayAdapter<String> {
 
     private final Activity context;
-    private final String projNames[];
+    private final List<Project> projects;
 
-    public homeListAdapter(Activity context, String names[]) {
-        super(context, R.layout.mylist, names);
+    public homeListAdapter(Activity context, List<Project> projects, String[] projectTitles) {
+        super(context, R.layout.mylist, projectTitles);
         // TODO Auto-generated constructor stub
 
-        this.projNames = names;
+        this.projects = projects;
         this.context=context;
     }
 
@@ -29,8 +32,7 @@ public class homeListAdapter extends ArrayAdapter<String> {
 
         TextView txtTitle = (TextView) rowView.findViewById(R.id.projName);
 
-        txtTitle.setText(projNames[position]);
-        Log.v("Project Name", projNames[position]);
+        txtTitle.setText(projects.get(position).getTitle());
         return rowView;
 
     };

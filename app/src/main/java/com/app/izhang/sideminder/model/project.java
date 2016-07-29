@@ -7,17 +7,17 @@ import java.util.Date;
 /**
  * Created by izhang on 6/21/16.
  */
-public class project extends SugarRecord {
-    private Date dueDate; // When the project should be due
-    private int reminderInterval; // The interval that the user should be notificed of the project
-    private String title; // Name of the side project
-    private String description; // Description of side project
+public class Project extends SugarRecord {
+    private Date dueDate; // When the Project should be due
+    private int reminderInterval; // The interval that the user should be notificed of the Project
+    private String title; // Name of the side Project
+    private String description; // Description of side Project
 
-    public project(){
+    public Project(){
 
     }
 
-    public project(Date dueDate, int reminderInterval, String title, String description){
+    public Project(Date dueDate, int reminderInterval, String title, String description){
         this.dueDate = dueDate;
         this.reminderInterval = reminderInterval;
         this.title = title;
@@ -65,7 +65,7 @@ public class project extends SugarRecord {
 
     @Override
     public boolean equals(Object o) {
-        if(o instanceof project && ((project) o).description == description && ((project) o).title == title){
+        if(o instanceof Project && ((Project) o).description == description && ((Project) o).title == title){
             return true;
         }
 
