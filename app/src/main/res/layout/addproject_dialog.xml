@@ -54,5 +54,6 @@
         android:id="@+id/projectDeadline"
         android:layout_gravity="center_horizontal"
         android:hint="Project Deadline"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:clickable="true" />
 </LinearLayout>
