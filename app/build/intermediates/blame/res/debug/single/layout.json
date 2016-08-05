@@ -20,6 +20,10 @@
         "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_action_menu_item_layout.xml"
     },
     {
+        "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/layout/projinfoview.xml",
+        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/res/layout/projinfoview.xml"
+    },
+    {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
         "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_action_mode_bar.xml"
     },
@@ -150,6 +154,10 @@
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
         "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/layout/activity_project.xml",
+        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/res/layout/activity_project.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",

@@ -3,6 +3,7 @@ package com.app.izhang.sideminder.view;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
@@ -61,7 +62,8 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         homeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+                Intent intent = new Intent(getApplicationContext(), projectActivity.class);
+                startActivity(intent);
             }
         });
 

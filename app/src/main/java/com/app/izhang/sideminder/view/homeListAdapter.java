@@ -35,5 +35,5 @@ public class homeListAdapter extends ArrayAdapter<String> {
         txtTitle.setText(projects.get(position).getTitle());
         return rowView;
 
-    };
+    }
 }
