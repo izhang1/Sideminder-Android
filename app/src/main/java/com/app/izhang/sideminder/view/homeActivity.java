@@ -26,6 +26,7 @@ import android.widget.Toast;
 
 import com.app.izhang.sideminder.R;
 import com.app.izhang.sideminder.model.Project;
+import com.daimajia.swipe.SwipeLayout;
 import com.orm.SugarContext;
 
 import java.text.SimpleDateFormat;
@@ -66,8 +67,9 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
                 startActivity(intent);
             }
         });
-
         sdf = new SimpleDateFormat(DATE_FORMAT);
+
+
     }
 
 
