@@ -1,7 +1,7 @@
 
 <com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="80dp" android:id="@+id/swipelayout"
-    android:padding="16dp">
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/swipelayout"
+    android:layout_margin="16dp">
     <!-- Bottom View Start-->
     <LinearLayout
         android:background="@color/colorPrimaryDark"
@@ -9,36 +9,51 @@
         android:layout_width="160dp"
         android:weightSum="1"
         android:layout_height="fill_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
         <!--What you want to show-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/textView"
-            android:layout_weight="0.45"
+            android:text="Delete"
+            android:id="@+id/deleteText"
             android:textColor="#ffffff"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:gravity="center" />
     </LinearLayout>
     <!-- Bottom View End-->
 
     <!-- Surface View Start -->
     <LinearLayout
-        android:padding="10dp"
         android:id="@+id/surface"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp">
     <!--What you want to show in SurfaceView-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Project Name"
-            android:textSize="17dp"
+            android:textSize="25dp"
             android:id="@+id/projName"
-            android:gravity="center_vertical|left" />
+            android:gravity="center_vertical|left"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@android:drawable/status_bar_item_background"
+            android:longClickable="true" />
+
     </LinearLayout>
     <!-- Surface View End -->
 </com.daimajia.swipe.SwipeLayout>
