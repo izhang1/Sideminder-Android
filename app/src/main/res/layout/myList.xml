@@ -1,20 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="363dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Project Name"
-        android:id="@+id/projName"
-        android:layout_marginLeft="5dp"
-        android:textSize="25dp"
-        android:textColor="#000000"
-        android:layout_margin="10dp"
-        android:gravity="center_vertical"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp" />
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="80dp" android:id="@+id/swipelayout"
+    android:padding="16dp">
+    <!-- Bottom View Start-->
+    <LinearLayout
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/bottom"
+        android:layout_width="160dp"
+        android:weightSum="1"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
+        <!--What you want to show-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Medium Text"
+            android:id="@+id/textView"
+            android:layout_weight="0.45"
+            android:textColor="#ffffff"
+            android:textSize="15dp" />
+    </LinearLayout>
+    <!-- Bottom View End-->
 
-</LinearLayout>
+    <!-- Surface View Start -->
+    <LinearLayout
+        android:padding="10dp"
+        android:id="@+id/surface"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+    <!--What you want to show in SurfaceView-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Project Name"
+            android:textSize="17dp"
+            android:id="@+id/projName"
+            android:gravity="center_vertical|left" />
+    </LinearLayout>
+    <!-- Surface View End -->
+</com.daimajia.swipe.SwipeLayout>

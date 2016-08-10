@@ -10,10 +10,11 @@ import android.widget.TextView;
 
 import com.app.izhang.sideminder.R;
 import com.app.izhang.sideminder.model.Project;
+import com.daimajia.swipe.adapters.ArraySwipeAdapter;
 
 import java.util.List;
 
-public class homeListAdapter extends ArrayAdapter<String> {
+public class homeListAdapter extends ArraySwipeAdapter<String> {
 
     private final Activity context;
     private final List<Project> projects;
@@ -36,4 +37,10 @@ public class homeListAdapter extends ArrayAdapter<String> {
         return rowView;
 
     }
+
+    @Override
+    public int getSwipeLayoutResourceId(int position){
+        return R.id.swipelayout;
+    }
+
 }
