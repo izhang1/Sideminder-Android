@@ -1,7 +1,6 @@
 package com.app.izhang.sideminder.view;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,12 +9,10 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
@@ -26,7 +23,7 @@ import android.widget.Toast;
 
 import com.app.izhang.sideminder.R;
 import com.app.izhang.sideminder.model.Project;
-import com.daimajia.swipe.SwipeLayout;
+import com.app.izhang.sideminder.presenter.homePresenterImpl;
 import com.orm.SugarContext;
 
 import java.text.SimpleDateFormat;
@@ -46,6 +43,8 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
     private EditText projDeadlineDate;
     private homeListAdapter adapter;
 
+    private homePresenterImpl presenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +54,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         SugarContext.init(this);
         homeList = (ListView) this.findViewById(R.id.homeList);
         addProjFab = (FloatingActionButton) this.findViewById(R.id.homeFab);
+        presenter = new homePresenterImpl();
 
         setAdapter();
 
@@ -202,9 +202,10 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         setAdapter();
     }
 
+
     private void setAdapter(){
         // TODO: 7/28/16 Pretty crude way of doing this...seek alternate way if possible
-        List<Project> projectsLists = getProjectName();
+        List<Project> projectsLists = presenter.getHomeData();
         String temp[] = new String[projectsLists.size()];
         for(int i = 0; i < projectsLists.size(); i++){
             temp[i] = projectsLists.get(i).getTitle();
