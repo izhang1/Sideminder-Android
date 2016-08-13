@@ -195,11 +195,13 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
     }
 
     private void saveData(String projName, String projDescription, String projInterval, String projDeadline){
-        Date date = new Date(projDeadline);
-        int projIntInterval = Integer.parseInt(projInterval);
-        Project newProject = new Project(date, projIntInterval, projName, projDescription);
-        newProject.save();
-        setAdapter();
+
+        boolean added = presenter.addNewProject(projName, projDescription, projInterval, projDeadline);
+        if(added){
+            setAdapter();
+        }else{
+            Toast.makeText(getApplicationContext(), "Please add the project again. An error occured.",Toast.LENGTH_LONG).show();
+        }
     }
 
 

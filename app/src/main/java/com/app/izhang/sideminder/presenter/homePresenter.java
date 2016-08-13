@@ -13,7 +13,7 @@ public interface homePresenter {
     public List<Project> getHomeData();
 
     // Method to add new project into the database
-    public boolean addNewProject(Project project);
+    public boolean addNewProject(String projName, String projDescription, String projInterval, String projDeadline);
 
     // Method to remove project from the database
     public boolean removeProject(String projName);
