@@ -19,11 +19,13 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.izhang.sideminder.R;
 import com.app.izhang.sideminder.model.Project;
 import com.app.izhang.sideminder.presenter.homePresenterImpl;
+import com.daimajia.swipe.SwipeLayout;
 import com.orm.SugarContext;
 
 import java.text.SimpleDateFormat;
@@ -67,9 +69,8 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
                 startActivity(intent);
             }
         });
+
         sdf = new SimpleDateFormat(DATE_FORMAT);
-
-
     }
 
 
@@ -207,13 +208,19 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
 
     private void setAdapter(){
         // TODO: 7/28/16 Pretty crude way of doing this...seek alternate way if possible
-        List<Project> projectsLists = presenter.getHomeData();
+        final List<Project> projectsLists = presenter.getHomeData();
         String temp[] = new String[projectsLists.size()];
         for(int i = 0; i < projectsLists.size(); i++){
             temp[i] = projectsLists.get(i).getTitle();
         }
         adapter = new homeListAdapter(this, projectsLists, temp);
         homeList.setAdapter(adapter);
+    }
+
+    public void deleteProject(Project proj){
+        homePresenterImpl presenter = new homePresenterImpl();
+        presenter.removeProject(proj.getId());
+        setAdapter();
     }
 
 }

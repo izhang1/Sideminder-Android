@@ -12,6 +12,7 @@ public class Project extends SugarRecord {
     private int reminderInterval; // The interval that the user should be notificed of the Project
     private String title; // Name of the side Project
     private String description; // Description of side Project
+    private int id;
 
     public Project(){
 
@@ -75,5 +76,9 @@ public class Project extends SugarRecord {
     @Override
     public String toString() {
         return "Title: " + title + "\n Description: " + description + " \n Due on: " + dueDate.toString();
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

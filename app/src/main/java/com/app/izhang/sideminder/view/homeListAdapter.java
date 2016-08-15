@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.app.izhang.sideminder.R;
 import com.app.izhang.sideminder.model.Project;
+import com.app.izhang.sideminder.presenter.homePresenterImpl;
 import com.daimajia.swipe.adapters.ArraySwipeAdapter;
 
 import java.util.List;
@@ -27,20 +28,34 @@ public class homeListAdapter extends ArraySwipeAdapter<String> {
         this.context=context;
     }
 
-    public View getView(int position,View view,ViewGroup parent) {
+    public View getView(final int position, View view, ViewGroup parent) {
         LayoutInflater inflater=context.getLayoutInflater();
         View rowView=inflater.inflate(R.layout.mylist, null,true);
 
-        TextView txtTitle = (TextView) rowView.findViewById(R.id.projName);
+        final TextView txtTitle = (TextView) rowView.findViewById(R.id.projName);
+        final TextView deleteText = (TextView) rowView.findViewById(R.id.deleteText);
 
-        txtTitle.setText(projects.get(position).getTitle());
+        final String projName = projects.get(position).getTitle();
+        txtTitle.setText(projName);
+
+        final Project proj = projects.get(position);
+        deleteText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((homeActivity)context).deleteProject(proj);
+            }
+        });
+
         return rowView;
-
     }
 
     @Override
     public int getSwipeLayoutResourceId(int position){
         return R.id.swipelayout;
     }
+
+
+
+
 
 }

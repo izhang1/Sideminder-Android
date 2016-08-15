@@ -16,7 +16,7 @@ import com.app.izhang.sideminder.model.Project;
 import java.util.ArrayList;
 import java.util.List;
 
-public class projectInfoListAdapter extends BaseAdapter {
+public class projectInfoListAdapter extends BaseAdapter{
 
     Context context;
     private static LayoutInflater inflater = null;

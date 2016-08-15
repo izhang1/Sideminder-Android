@@ -27,12 +27,27 @@ public class homePresenterImpl implements homePresenter{
         int projIntInterval = Integer.parseInt(projInterval);
         Project newProject = new Project(date, projIntInterval, projName, projDescription);
         long saveLog = newProject.save();
-        Log.v("SaveLog", "Long Number : " +saveLog);
+        Log.v("SaveLog", "Long Number : " + saveLog);
         return true;
     }
 
     @Override
-    public boolean removeProject(String projName) {
-        return true;
+    public boolean removeProject(long projId) {
+        Project temp = Project.findById(Project.class, projId);
+        if(temp != null) temp.delete();
+        else return false;
+
+        if(Project.findById(Project.class, projId) == null) return true;
+        else return false;
+    }
+
+    @Override
+    public boolean setInterval(String projName, String projInterval) {
+        return false;
+    }
+
+    @Override
+    public boolean setDeadline(String projName, String projDeadline) {
+        return false;
     }
 }
