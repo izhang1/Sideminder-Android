@@ -17,4 +17,11 @@ public interface homePresenter {
 
     // Method to remove project from the database
     public boolean removeProject(String projName);
+
+    // Method to change interval of project
+    public boolean changeInterval(String projName, String projInterval);
+
+    // Method to change deadline of project
+    public boolean changeDeadline(String projName, String projDeadline);
+    
 }
