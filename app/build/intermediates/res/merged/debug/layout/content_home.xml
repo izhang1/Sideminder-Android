@@ -16,5 +16,7 @@
         android:id="@+id/homeList"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:fastScrollEnabled="false" />
+        android:fastScrollEnabled="false"
+        android:drawSelectorOnTop="true"
+        android:listSelector="@drawable/listripple"/>
 </RelativeLayout>
