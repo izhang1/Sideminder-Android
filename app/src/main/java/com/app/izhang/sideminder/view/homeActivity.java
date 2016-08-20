@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
@@ -37,6 +38,7 @@ import java.util.List;
 public class homeActivity extends AppCompatActivity implements homeView, FloatingActionButton.OnClickListener{
 
     static final String DATE_FORMAT = "EEE MMM dd HH:mm:ss z yyyy";
+    static final String PROJECT_KEY = "PROJ_ID";
 
     private ListView homeList = null;
     private FloatingActionButton addProjFab = null;
@@ -46,6 +48,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
     private homeListAdapter adapter;
 
     private homePresenterImpl presenter;
+    List<Project> projectsLists;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +69,8 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getApplicationContext(), projectActivity.class);
+                intent.putExtra(PROJECT_KEY, projectsLists.get(i).getId());
+                Log.v("Project Int", "int: " + i );
                 startActivity(intent);
             }
         });
@@ -208,7 +213,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
 
     private void setAdapter(){
         // TODO: 7/28/16 Pretty crude way of doing this...seek alternate way if possible
-        final List<Project> projectsLists = presenter.getHomeData();
+        projectsLists = presenter.getHomeData();
         String temp[] = new String[projectsLists.size()];
         for(int i = 0; i < projectsLists.size(); i++){
             temp[i] = projectsLists.get(i).getTitle();

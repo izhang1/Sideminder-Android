@@ -45,8 +45,22 @@ public class projectInfoListAdapter extends BaseAdapter{
         TextView infoTitle = (TextView) rowView.findViewById(R.id.infoTitle);
         TextView infoDetails = (TextView) rowView.findViewById(R.id.infoDetails);
 
-        infoTitle.setText("Info Title - Set");
-        infoDetails.setText("Info Details - Set");
+        String titleContent = "";
+        String detailsContent = "";
+
+        if(position == 0){
+            titleContent = "Due Date";
+            detailsContent = date;
+        }else if(position == 1){
+            titleContent = "Notification";
+            detailsContent = "Every " + intervalTime + " Days";
+        }else if(position == 2){
+            titleContent = "Tags";
+            detailsContent = hashtags.toString();
+        }
+
+        infoTitle.setText(titleContent);
+        infoDetails.setText(detailsContent);
 
         return rowView;
 
