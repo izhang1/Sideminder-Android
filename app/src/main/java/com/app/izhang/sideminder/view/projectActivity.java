@@ -37,7 +37,7 @@ public class projectActivity extends AppCompatActivity {
         hashTags.add("#Android");
 
         ListView listview = (ListView) this.findViewById(R.id.projInfoList);
-        SimpleDateFormat sdf = new SimpleDateFormat("MMMMMMMMMMMM DD");
+        SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd");
         Date date = project.getDueDate();
 
         listview.setAdapter(new projectInfoListAdapter(this,
