@@ -4,7 +4,6 @@ import com.orm.SugarRecord;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 
 /**
  * Created by izhang on 6/21/16.
@@ -15,6 +14,8 @@ public class Project extends SugarRecord {
     private String title; // Name of the side Project
     private String description; // Description of side Project
     private ArrayList<String> hashtags;
+
+    public Project(){}
 
     public Project(Date dueDate, int reminderInterval, String title, String description){
         this.dueDate = dueDate;

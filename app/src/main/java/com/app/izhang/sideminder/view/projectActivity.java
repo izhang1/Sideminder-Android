@@ -7,7 +7,9 @@ import android.widget.ListView;
 import com.app.izhang.sideminder.R;
 import com.app.izhang.sideminder.model.Project;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class projectActivity extends AppCompatActivity {
 
@@ -35,7 +37,13 @@ public class projectActivity extends AppCompatActivity {
         hashTags.add("#Android");
 
         ListView listview = (ListView) this.findViewById(R.id.projInfoList);
-        listview.setAdapter(new projectInfoListAdapter(this, project.getDueDate().toString(),Integer.toString(project.getReminderInterval()),hashTags));
+        SimpleDateFormat sdf = new SimpleDateFormat("MMMMMMMMMMMM DD");
+        Date date = project.getDueDate();
+
+        listview.setAdapter(new projectInfoListAdapter(this,
+                    sdf.format(date),
+                    Integer.toString(project.getReminderInterval()),
+                    hashTags));
 
     }
 }
