@@ -594,6 +594,7 @@ int id action_bar_spinner 0x7f0c0001
 int id action_bar_subtitle 0x7f0c003d
 int id action_bar_title 0x7f0c003c
 int id action_context_bar 0x7f0c005d
+int id action_delete 0x7f0c0093
 int id action_divider 0x7f0c0085
 int id action_menu_divider 0x7f0c0002
 int id action_menu_presenter 0x7f0c0003
@@ -796,6 +797,7 @@ int layout select_dialog_singlechoice_material 0x7f040035
 int layout support_simple_spinner_dropdown_item 0x7f040036
 int layout testswipelayout 0x7f040037
 int menu menu_home 0x7f0d0000
+int menu menu_project 0x7f0d0001
 int mipmap ic_launcher 0x7f030000
 int string abc_action_bar_home_description 0x7f060000
 int string abc_action_bar_home_description_format 0x7f060001
@@ -816,11 +818,12 @@ int string abc_searchview_description_voice 0x7f06000f
 int string abc_shareactionprovider_share_with 0x7f060010
 int string abc_shareactionprovider_share_with_application 0x7f060011
 int string abc_toolbar_collapse_description 0x7f060012
-int string action_settings 0x7f060014
-int string app_name 0x7f060015
-int string appbar_scrolling_view_behavior 0x7f060016
-int string bottom_sheet_behavior 0x7f060017
-int string character_counter_pattern 0x7f060018
+int string action_delete 0x7f060014
+int string action_settings 0x7f060015
+int string app_name 0x7f060016
+int string appbar_scrolling_view_behavior 0x7f060017
+int string bottom_sheet_behavior 0x7f060018
+int string character_counter_pattern 0x7f060019
 int string status_bar_notification_info_overflow 0x7f060013
 int style AlertDialog_AppCompat 0x7f090089
 int style AlertDialog_AppCompat_Light 0x7f09008a
