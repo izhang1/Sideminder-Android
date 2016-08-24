@@ -20,10 +20,6 @@
         "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_btn_radio_material.xml"
     },
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_text_cursor_material.xml"
-    },
-    {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
         "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_textfield_search_material.xml"
     },
@@ -32,16 +28,24 @@
         "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_ratingbar_indicator_material.xml"
     },
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_seekbar_thumb_material.xml"
-    },
-    {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
         "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_item_background_holo_light.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
         "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/drawable/background_circle.xml",
+        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/res/drawable/background_circle.xml"
+    },
+    {
+        "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
+        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
+        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_seekbar_thumb_material.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",

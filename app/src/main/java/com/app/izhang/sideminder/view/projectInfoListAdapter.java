@@ -44,6 +44,7 @@ public class projectInfoListAdapter extends BaseAdapter{
 
         TextView infoTitle = (TextView) rowView.findViewById(R.id.infoTitle);
         TextView infoDetails = (TextView) rowView.findViewById(R.id.infoDetails);
+        TextView infoIndicator = (TextView) rowView.findViewById(R.id.circleindicator);
 
         String titleContent = "";
         String detailsContent = "";
@@ -57,6 +58,7 @@ public class projectInfoListAdapter extends BaseAdapter{
         }else if(position == 2){
             titleContent = "Tags";
             detailsContent = hashtags.toString();
+            infoIndicator.setText("#");
         }
 
         infoTitle.setText(titleContent);

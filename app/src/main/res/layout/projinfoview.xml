@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/infoImage"
-        android:src="@android:drawable/sym_def_app_icon"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="12dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp" />
+    <TextView
+        android:id="@+id/circleindicator"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/background_circle"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        tools:text="1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Title"
         android:id="@+id/infoTitle"
-        android:layout_alignTop="@+id/infoImage"
+        android:layout_alignTop="@+id/circleindicator"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/infoImage"
-        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/circleindicator"
+        android:layout_marginTop="1dp"
         android:layout_marginLeft="20dp"
         android:textSize="18dp" />
 
@@ -31,11 +36,11 @@
         android:layout_height="wrap_content"
         android:text="Details for Sideminder"
         android:id="@+id/infoDetails"
-        android:layout_alignBottom="@+id/infoImage"
         android:layout_alignStart="@+id/infoTitle"
         android:layout_below="@+id/infoTitle"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="1dp"
         android:layout_alignParentEnd="true"
         android:textSize="16dp"
-        android:gravity="center_vertical" />
+        android:gravity="center_vertical"
+        android:layout_alignBottom="@+id/circleindicator" />
 </RelativeLayout>
