@@ -13,6 +13,7 @@ import com.app.izhang.sideminder.model.Project;
 import com.app.izhang.sideminder.presenter.homePresenterImpl;
 import com.daimajia.swipe.adapters.ArraySwipeAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class homeListAdapter extends ArraySwipeAdapter<String> {
@@ -33,10 +34,14 @@ public class homeListAdapter extends ArraySwipeAdapter<String> {
         View rowView=inflater.inflate(R.layout.mylist, null,true);
 
         final TextView txtTitle = (TextView) rowView.findViewById(R.id.projName);
+        final TextView hashTitle = (TextView) rowView.findViewById(R.id.hashtagText);
         final TextView deleteText = (TextView) rowView.findViewById(R.id.deleteText);
 
         final String projName = projects.get(position).getTitle();
-        txtTitle.setText(projName);
+        final String projHash = projects.get(position).getHashtags();
+
+        if(projName != null) txtTitle.setText(projName);
+        if(projHash != null) hashTitle.setText(projHash);
 
         final Project proj = projects.get(position);
         deleteText.setOnClickListener(new View.OnClickListener() {

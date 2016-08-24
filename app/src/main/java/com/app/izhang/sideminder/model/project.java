@@ -13,16 +13,16 @@ public class Project extends SugarRecord {
     private int reminderInterval; // The interval that the user should be notificed of the Project
     private String title; // Name of the side Project
     private String description; // Description of side Project
-    private ArrayList<String> hashtags;
+    private String hashtags;
 
     public Project(){}
 
-    public Project(Date dueDate, int reminderInterval, String title, String description){
+    public Project(Date dueDate, int reminderInterval, String title, String description, String hashTags){
         this.dueDate = dueDate;
         this.reminderInterval = reminderInterval;
         this.title = title;
         this.description = description;
-        this.hashtags = new ArrayList<>();
+        this.hashtags = hashTags;
     }
 
     // Getters
@@ -43,7 +43,7 @@ public class Project extends SugarRecord {
         return description;
     }
 
-    public ArrayList<String> getHashtags(){ return hashtags; }
+    public String getHashtags(){ return hashtags; }
 
 
 
@@ -65,11 +65,8 @@ public class Project extends SugarRecord {
         this.title = title;
     }
 
-    public void addHashtag(String hashtag){ this.hashtags.add(hashtag); }
+    public void addHashtag(String hashtag){ hashtags += hashtag + ","; }
 
-    public void removeHashtag(String hashtag){ this.hashtags.remove(this.hashtags.indexOf(hashtag));}
-
-    public void setHashtags(ArrayList<String> hashtags){ this.hashtags = hashtags; }
 
     @Override
     public boolean equals(Object o) {

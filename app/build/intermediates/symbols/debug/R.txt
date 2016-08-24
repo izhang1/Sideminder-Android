@@ -643,6 +643,7 @@ int id fill 0x7f0c002e
 int id fill_horizontal 0x7f0c002f
 int id fill_vertical 0x7f0c0022
 int id fixed 0x7f0c003a
+int id hashtagText 0x7f0c0080
 int id home 0x7f0c0004
 int id homeAsUp 0x7f0c000f
 int id homeFab 0x7f0c006c
@@ -650,7 +651,6 @@ int id homeList 0x7f0c0073
 int id icon 0x7f0c0044
 int id ifRoom 0x7f0c0035
 int id image 0x7f0c0041
-int id imageView2 0x7f0c0080
 int id info 0x7f0c008c
 int id infoDetails 0x7f0c0090
 int id infoImage 0x7f0c008e

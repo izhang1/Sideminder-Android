@@ -34,11 +34,12 @@
         android:orientation="horizontal"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:paddingLeft="5dp">
+        android:paddingLeft="5dp"
+        android:weightSum="1">
     <!--What you want to show in SurfaceView-->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="196dp"
+            android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Project Name"
             android:textSize="25dp"
@@ -46,14 +47,16 @@
             android:gravity="center_vertical|left"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:paddingLeft="10dp" />
+            android:paddingLeft="10dp"
+            android:layout_weight="0.96" />
 
-        <ImageView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView2"
-            android:src="@android:drawable/status_bar_item_background"
-            android:longClickable="true" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Hashtag \n "
+            android:id="@+id/hashtagText"
+            android:gravity="center_vertical|right" />
 
     </LinearLayout>
     <!-- Surface View End -->

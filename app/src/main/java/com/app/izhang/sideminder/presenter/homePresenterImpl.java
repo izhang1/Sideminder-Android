@@ -5,6 +5,7 @@ import android.widget.Toast;
 
 import com.app.izhang.sideminder.model.Project;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -25,7 +26,10 @@ public class homePresenterImpl implements homePresenter{
 
         Date date = new Date(projDeadline);
         int projIntInterval = Integer.parseInt(projInterval);
-        Project newProject = new Project(date, projIntInterval, projName, projDescription);
+
+
+        Project newProject = new Project(date, projIntInterval, projName, projDescription, projName);
+
         long saveLog = newProject.save();
         Log.v("SaveLog", "Long Number : " + saveLog);
         return true;
