@@ -22,21 +22,22 @@ public class projectInfoListAdapter extends BaseAdapter{
     private static LayoutInflater inflater = null;
     String date;
     String intervalTime;
+    String description;
     ArrayList<String> hashtags;
 
-    public projectInfoListAdapter(Context mainActivity, String date, String intervalTime, ArrayList<String> hashtags) {
+    public projectInfoListAdapter(Context mainActivity, String date, String intervalTime, ArrayList<String> hashtags, String description) {
         context = mainActivity;
         inflater = (LayoutInflater) context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.date = date;
         this.intervalTime = intervalTime;
         this.hashtags = hashtags;
+        this.description = description;
     }
 
     @Override
     public int getCount() {
-        // TODO Auto-generated method stub
-        return 3;
+        return 4;
     }
 
     public View getView(int position, View view, ViewGroup parent) {
@@ -59,6 +60,9 @@ public class projectInfoListAdapter extends BaseAdapter{
             titleContent = "Tags";
             detailsContent = hashtags.toString();
             infoIndicator.setText("#");
+        }else if(position == 3){
+            titleContent = "Description";
+            detailsContent = description;
         }
 
         infoTitle.setText(titleContent);

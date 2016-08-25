@@ -48,7 +48,8 @@ public class projectActivity extends AppCompatActivity {
         listview.setAdapter(new projectInfoListAdapter(this,
                     sdf.format(date),
                     Integer.toString(project.getReminderInterval()),
-                    hashTags));
+                    hashTags,
+                    project.getDescription()));
 
     }
 
