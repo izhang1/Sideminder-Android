@@ -53,9 +53,13 @@ public class projectInfoListAdapter extends BaseAdapter{
         if(position == 0){
             titleContent = "Due Date";
             detailsContent = date;
+            char monthInitial = date.charAt(0);
+            String monthInitials = "" + monthInitial;
+            infoIndicator.setText(monthInitials);
         }else if(position == 1){
             titleContent = "Notification";
             detailsContent = "Every " + intervalTime + " Days";
+            infoIndicator.setText("" + intervalTime);
         }else if(position == 2){
             titleContent = "Tags";
             detailsContent = hashtags.toString();
@@ -63,6 +67,7 @@ public class projectInfoListAdapter extends BaseAdapter{
         }else if(position == 3){
             titleContent = "Description";
             detailsContent = description;
+            infoIndicator.setText("D");
         }
 
         infoTitle.setText(titleContent);
