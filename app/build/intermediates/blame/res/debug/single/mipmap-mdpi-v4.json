@@ -1,7 +1,15 @@
 [
     {
+        "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/sdmrlogo256x256.png",
+        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/res/mipmap-mdpi/sdmrlogo256x256.png"
+    },
+    {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/hashtag.png",
         "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/res/mipmap-mdpi/hashtag.png"
+    },
+    {
+        "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/sdmrlogo.png",
+        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/res/mipmap-mdpi/sdmrlogo.png"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png",
