@@ -1,10 +1,16 @@
 package com.app.izhang.sideminder.view;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.app.izhang.sideminder.R;
@@ -43,7 +49,7 @@ public class projectActivity extends AppCompatActivity {
 
         ListView listview = (ListView) this.findViewById(R.id.projInfoList);
         SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd");
-        Date date = project.getDueDate();
+        final Date date = project.getDueDate();
 
         listview.setAdapter(new projectInfoListAdapter(this,
                     sdf.format(date),
@@ -51,6 +57,42 @@ public class projectActivity extends AppCompatActivity {
                     hashTags,
                     project.getDescription(),
                     projID));
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch(i){
+                    case 0:
+                        Dialog dialog = createDeadlinePresenter(getApplicationContext());
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+
+                }
+            }
+        });
+
+    }
+
+    public Dialog createDeadlinePresenter(Context context){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("Change Deadline")
+                .setPositiveButton("Set", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // FIRE ZE MISSILES!
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+        // Create the AlertDialog object and return it
+        return builder.create();
 
     }
 

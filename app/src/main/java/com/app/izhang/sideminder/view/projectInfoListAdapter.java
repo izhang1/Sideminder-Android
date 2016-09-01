@@ -75,6 +75,7 @@ public class projectInfoListAdapter extends BaseAdapter{
         infoTitle.setText(titleContent);
         infoDetails.setText(detailsContent);
 
+
         return rowView;
 
     }
