@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:2:1-37:12
+ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:2:1-38:12
 	xmlns:android
 		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:2:11-69
 	package
@@ -38,7 +38,7 @@ ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android
 	android:value
 		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:16:9-50
 application
-ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:18:5-35:19
+ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:18:5-36:19
 MERGED from [com.android.support:appcompat-v7:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
 MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
@@ -87,7 +87,9 @@ ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android
 	android:name
 		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:31:27-74
 activity#com.app.izhang.sideminder.view.projectActivity
-ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:34:9-67
+ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:34:9-35:56
+	android:theme
+		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:35:13-44
 	android:name
 		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:34:19-55
 uses-sdk

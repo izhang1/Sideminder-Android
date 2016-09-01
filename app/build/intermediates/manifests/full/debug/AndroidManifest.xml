@@ -37,7 +37,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.app.izhang.sideminder.view.projectActivity" />
+        <activity
+            android:name="com.app.izhang.sideminder.view.projectActivity"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

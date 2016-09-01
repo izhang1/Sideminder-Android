@@ -371,14 +371,7 @@
                     "endOffset": 2227
                 },
                 "from": {
-                    "file": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/res/values/colors.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 153,
-                        "endColumn": 45,
-                        "endOffset": 194
-                    }
+                    "file": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/res/values/colors.xml"
                 }
             },
             {
@@ -7075,6 +7068,27 @@
                 },
                 "from": {
                     "file": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/values/values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1720,
+                    "startColumn": 4,
+                    "startOffset": 135354,
+                    "endLine": 1723,
+                    "endColumn": 12,
+                    "endOffset": 135517
+                },
+                "from": {
+                    "file": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 906,
+                        "endLine": 27,
+                        "endColumn": 12,
+                        "endOffset": 1069
+                    }
                 }
             }
         ]
