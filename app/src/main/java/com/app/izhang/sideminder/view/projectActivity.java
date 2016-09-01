@@ -7,11 +7,17 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.view.ContextThemeWrapper;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import com.app.izhang.sideminder.R;
 import com.app.izhang.sideminder.model.Project;
@@ -19,7 +25,9 @@ import com.app.izhang.sideminder.presenter.homePresenterImpl;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 public class projectActivity extends AppCompatActivity {
 
@@ -64,6 +72,7 @@ public class projectActivity extends AppCompatActivity {
                 switch(i){
                     case 0:
                         Dialog dialog = createDeadlinePresenter(getApplicationContext());
+                        dialog.show();
                         break;
                     case 1:
                         break;
@@ -79,11 +88,37 @@ public class projectActivity extends AppCompatActivity {
     }
 
     public Dialog createDeadlinePresenter(Context context){
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.myDialog));
+
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.addproject_dialog,null);
+        final EditText projNameTV = (EditText) dialogView.findViewById(R.id.projName);
+        final EditText projDescriptionTV = (EditText) dialogView.findViewById(R.id.projDesc);
+        final Spinner projReminderInterval = (Spinner) dialogView.findViewById(R.id.projRemindInter);
+        final EditText projDeadlineDate = (EditText) dialogView.findViewById(R.id.projectDeadline);
+
+        projNameTV.setVisibility(View.INVISIBLE);
+        projDescriptionTV.setVisibility(View.INVISIBLE);
+        projDeadlineDate.setVisibility(View.INVISIBLE);
+
+        // Spinner Populate
+        List<String> categories = Arrays.asList(getIntervalList());
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        projReminderInterval.setAdapter(dataAdapter);
+
+        builder.setView(dialogView);
         builder.setMessage("Change Deadline")
                 .setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // FIRE ZE MISSILES!
+
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -94,6 +129,21 @@ public class projectActivity extends AppCompatActivity {
         // Create the AlertDialog object and return it
         return builder.create();
 
+    }
+
+    public String[] getIntervalList(){
+        String[] list = {
+                "1",
+                "2",
+                "3",
+                "5",
+                "7",
+                "14",
+                "30",
+                "60",
+        };
+
+        return list;
     }
 
     @Override

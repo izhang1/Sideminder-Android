@@ -54,6 +54,8 @@ public class homeListAdapter extends ArraySwipeAdapter<String> {
         return rowView;
     }
 
+
+
     @Override
     public int getSwipeLayoutResourceId(int position){
         return R.id.swipelayout;
