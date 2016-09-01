@@ -24,8 +24,9 @@ public class projectInfoListAdapter extends BaseAdapter{
     String intervalTime;
     String description;
     ArrayList<String> hashtags;
+    long projID;
 
-    public projectInfoListAdapter(Context mainActivity, String date, String intervalTime, ArrayList<String> hashtags, String description) {
+    public projectInfoListAdapter(Context mainActivity, String date, String intervalTime, ArrayList<String> hashtags, String description, long projID) {
         context = mainActivity;
         inflater = (LayoutInflater) context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -33,6 +34,7 @@ public class projectInfoListAdapter extends BaseAdapter{
         this.intervalTime = intervalTime;
         this.hashtags = hashtags;
         this.description = description;
+        this.projID = projID;
     }
 
     @Override

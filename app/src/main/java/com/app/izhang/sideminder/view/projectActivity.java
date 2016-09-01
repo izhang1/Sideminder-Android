@@ -49,7 +49,8 @@ public class projectActivity extends AppCompatActivity {
                     sdf.format(date),
                     Integer.toString(project.getReminderInterval()),
                     hashTags,
-                    project.getDescription()));
+                    project.getDescription(),
+                    projID));
 
     }
 

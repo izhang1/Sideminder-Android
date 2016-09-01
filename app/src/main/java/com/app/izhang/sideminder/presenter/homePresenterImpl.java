@@ -45,13 +45,5 @@ public class homePresenterImpl implements homePresenter{
         else return false;
     }
 
-    @Override
-    public boolean setInterval(String projName, String projInterval) {
-        return false;
-    }
 
-    @Override
-    public boolean setDeadline(String projName, String projDeadline) {
-        return false;
-    }
 }
