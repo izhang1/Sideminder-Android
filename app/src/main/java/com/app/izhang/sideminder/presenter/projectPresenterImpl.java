@@ -10,8 +10,13 @@ import java.util.Date;
 public class projectPresenterImpl implements projectPresenter{
 
     @Override
-    public boolean setInterval(long projName, String projInterval) {
-        return false;
+    public boolean setInterval(long projID, int projInterval) {
+        Project project = Project.findById(Project.class, projID);
+        if(project == null) return false;
+
+        project.setReminderInterval(projInterval);
+        if(project.getReminderInterval() == projInterval) project.save();
+        return true;
     }
 
     @Override

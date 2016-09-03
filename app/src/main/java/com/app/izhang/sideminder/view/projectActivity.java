@@ -91,10 +91,12 @@ public class projectActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch(i){
                     case 0:
-                        Dialog dialog = createDeadlinePresenter(getApplicationContext());
-                        dialog.show();
+                        Dialog deadlineDialog = createDeadlinePresenter();
+                        deadlineDialog.show();
                         break;
                     case 1:
+                        Dialog notifyDialog = createNotificationpresenter();
+                        notifyDialog.show();
                         break;
                     case 2:
                         break;
@@ -108,11 +110,80 @@ public class projectActivity extends AppCompatActivity {
 
     }
 
-    public Dialog createDeadlinePresenter(Context context){
+    public Dialog createNotificationpresenter(){
         AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.myDialog));
 
         LayoutInflater inflater = this.getLayoutInflater();
-        View dialogView = inflater.inflate(R.layout.setdeadline_dialog,null);
+        View dialogView = inflater.inflate(R.layout.setnotification_dialog,null);
+
+        // Deadline Init
+        final Spinner projIntervalReminder = (Spinner) dialogView.findViewById(R.id.notificationSet);
+
+        // Spinner Populate
+        List<String> categories = Arrays.asList(getIntervalList());
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        projIntervalReminder.setAdapter(dataAdapter);
+
+        builder.setView(dialogView);
+        builder.setMessage("Change Deadline")
+                .setPositiveButton("Set", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        projectPresenterImpl presenter = new projectPresenterImpl();
+                        boolean didSetInterval = presenter.setInterval(projID, Integer.parseInt(projIntervalReminder.getSelectedItem().toString()));
+                        if(didSetInterval) initView();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+        // Create the AlertDialog object and return it
+        return builder.create();
+
+    }
+
+    public String[] getIntervalList(){
+        String[] list = {
+                "1",
+                "2",
+                "3",
+                "5",
+                "7",
+                "14",
+                "30",
+                "60",
+        };
+
+        return list;
+    }
+
+    private void setDateTimeField() {
+        Calendar newCalendar = Calendar.getInstance();
+        deadlinePicker = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                Calendar newDate = Calendar.getInstance();
+                newDate.set(year, monthOfYear, dayOfMonth);
+                projDeadlineDate.setText(sdf.format(newDate.getTime()));
+            }
+
+        }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
+
+        deadlinePicker.show();
+    }
+
+    public Dialog createDeadlinePresenter(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.myDialog));
+
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.setnotification_dialog,null);
 
         // Deadline Init
         projDeadlineDate = (EditText) dialogView.findViewById(R.id.projDeadline);
@@ -144,34 +215,7 @@ public class projectActivity extends AppCompatActivity {
 
     }
 
-    private void setDateTimeField() {
-        Calendar newCalendar = Calendar.getInstance();
-        deadlinePicker = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                Calendar newDate = Calendar.getInstance();
-                newDate.set(year, monthOfYear, dayOfMonth);
-                projDeadlineDate.setText(sdf.format(newDate.getTime()));
-            }
 
-        }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
-
-        deadlinePicker.show();
-    }
-
-    public String[] getIntervalList(){
-        String[] list = {
-                "1",
-                "2DSe",
-                "3",
-                "5",
-                "7",
-                "14",
-                "30",
-                "60",
-        };
-
-        return list;
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
