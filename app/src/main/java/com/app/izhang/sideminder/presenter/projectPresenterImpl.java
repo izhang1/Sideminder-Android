@@ -23,7 +23,7 @@ public class projectPresenterImpl implements projectPresenter{
     public boolean setDeadline(long projID, String projDeadline) {
         Project project = Project.findById(Project.class, projID);
         if(project == null) return false;
-
+        if(projDeadline.isEmpty()) return false;
         Date date = new Date(projDeadline);
         project.setDueDate(date);
         project.save();

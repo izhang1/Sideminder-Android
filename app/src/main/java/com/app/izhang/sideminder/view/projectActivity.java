@@ -183,7 +183,7 @@ public class projectActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.myDialog));
 
         LayoutInflater inflater = this.getLayoutInflater();
-        View dialogView = inflater.inflate(R.layout.setnotification_dialog,null);
+        View dialogView = inflater.inflate(R.layout.setdeadline_dialog,null);
 
         // Deadline Init
         projDeadlineDate = (EditText) dialogView.findViewById(R.id.projDeadline);
