@@ -10,4 +10,6 @@ public interface projectPresenter {
     // Method to change deadline of project
     public boolean setDeadline(long projID, String projDeadline);
 
+    public boolean setDescription(long projID, String projDescription);
+
 }

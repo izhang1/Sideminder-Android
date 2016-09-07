@@ -30,4 +30,17 @@ public class projectPresenterImpl implements projectPresenter{
 
         return true;
     }
+
+    @Override
+    public boolean setDescription(long projID, String projDescription) {
+        Project project = Project.findById(Project.class, projID);
+        if(project == null) return false;
+        if(projDescription.isEmpty()) return false;
+
+        project.setDescription(projDescription);
+        project.save();
+
+        return true;
+
+    }
 }

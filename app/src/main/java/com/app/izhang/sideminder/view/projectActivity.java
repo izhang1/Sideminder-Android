@@ -101,8 +101,9 @@ public class projectActivity extends AppCompatActivity {
                     case 2:
                         break;
                     case 3:
+                        Dialog descDialog = createDescriptionPresenter();
+                        descDialog.show();
                         break;
-
                 }
             }
         });
@@ -215,6 +216,34 @@ public class projectActivity extends AppCompatActivity {
 
     }
 
+    public Dialog createDescriptionPresenter(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.myDialog));
+
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.setdeadline_dialog,null);
+
+        // Deadline Init
+        final EditText descriptionInput = (EditText) dialogView.findViewById(R.id.projDeadline);
+        descriptionInput.setHint("New Project Description");
+        descriptionInput.setInputType(InputType.TYPE_CLASS_TEXT);
+
+        builder.setView(dialogView);
+        builder.setMessage("Change Description")
+                .setPositiveButton("Set", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        projectPresenterImpl projectPresenter = new projectPresenterImpl();
+                        boolean didSetDescription  = projectPresenter.setDescription(projID, descriptionInput.getText().toString());
+                        if(didSetDescription) initView();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+        // Create the AlertDialog object and return it
+        return builder.create();
+    }
 
 
     @Override
