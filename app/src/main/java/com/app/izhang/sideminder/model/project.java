@@ -65,8 +65,9 @@ public class Project extends SugarRecord {
         this.title = title;
     }
 
-    public void addHashtag(String hashtag){ hashtags += hashtag + ","; }
+    public void addHashtag(String hashtag){ this.hashtags += hashtag + ","; }
 
+    public void setHashtags(String hashtag){ this.hashtags = hashtag; }
 
     @Override
     public boolean equals(Object o) {

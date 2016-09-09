@@ -12,4 +12,6 @@ public interface projectPresenter {
 
     public boolean setDescription(long projID, String projDescription);
 
+    public boolean setHashtag(long projID, String projHashtag);
+
 }

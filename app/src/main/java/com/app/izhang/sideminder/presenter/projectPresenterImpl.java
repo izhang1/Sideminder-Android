@@ -41,6 +41,19 @@ public class projectPresenterImpl implements projectPresenter{
         project.save();
 
         return true;
+    }
 
+    @Override
+    public boolean setHashtag(long projID, String projHashtag) {
+        Project project = Project.findById(Project.class, projID);
+        if(project == null) return false;
+        if(projHashtag.isEmpty()) return false;
+
+        String hashRevised = projHashtag;
+        hashRevised.replaceAll("\\s+","");
+        project.setHashtags(hashRevised);
+        project.save();
+
+        return true;
     }
 }

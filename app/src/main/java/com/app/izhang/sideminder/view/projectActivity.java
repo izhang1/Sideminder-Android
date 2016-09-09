@@ -82,7 +82,7 @@ public class projectActivity extends AppCompatActivity {
         listview.setAdapter(new projectInfoListAdapter(this,
                 sdf.format(date),
                 Integer.toString(project.getReminderInterval()),
-                hashTags,
+                project.getHashtags(),
                 project.getDescription(),
                 projID));
 
@@ -95,10 +95,12 @@ public class projectActivity extends AppCompatActivity {
                         deadlineDialog.show();
                         break;
                     case 1:
-                        Dialog notifyDialog = createNotificationpresenter();
+                        Dialog notifyDialog = createNotificationPresenter();
                         notifyDialog.show();
                         break;
                     case 2:
+                        Dialog hashtagDialog = createHashtagPresenter();
+                        hashtagDialog.show();
                         break;
                     case 3:
                         Dialog descDialog = createDescriptionPresenter();
@@ -111,7 +113,7 @@ public class projectActivity extends AppCompatActivity {
 
     }
 
-    public Dialog createNotificationpresenter(){
+    public Dialog createNotificationPresenter(){
         AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.myDialog));
 
         LayoutInflater inflater = this.getLayoutInflater();
@@ -245,6 +247,34 @@ public class projectActivity extends AppCompatActivity {
         return builder.create();
     }
 
+    public Dialog createHashtagPresenter(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.myDialog));
+
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.setdeadline_dialog,null);
+
+        // Deadline Init
+        final EditText hashTagInput = (EditText) dialogView.findViewById(R.id.projDeadline);
+        hashTagInput.setText(Project.findById(Project.class, projID).getHashtags());
+        hashTagInput.setInputType(InputType.TYPE_CLASS_TEXT);
+
+        builder.setView(dialogView);
+        builder.setMessage("Change Deadline - Separated by Commas")
+                .setPositiveButton("Set", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        projectPresenterImpl projectPresenter = new projectPresenterImpl();
+                        boolean didSetHashtag  = projectPresenter.setHashtag(projID, hashTagInput.getText().toString());
+                        if(didSetHashtag) initView();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+        // Create the AlertDialog object and return it
+        return builder.create();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

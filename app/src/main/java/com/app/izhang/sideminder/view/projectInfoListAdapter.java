@@ -14,6 +14,7 @@ import com.app.izhang.sideminder.R;
 import com.app.izhang.sideminder.model.Project;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class projectInfoListAdapter extends BaseAdapter{
@@ -23,18 +24,18 @@ public class projectInfoListAdapter extends BaseAdapter{
     String date;
     String intervalTime;
     String description;
-    ArrayList<String> hashtags;
+    List<String> hashtags;
     long projID;
 
-    public projectInfoListAdapter(Context mainActivity, String date, String intervalTime, ArrayList<String> hashtags, String description, long projID) {
+    public projectInfoListAdapter(Context mainActivity, String date, String intervalTime, String hashtags, String description, long projID) {
         context = mainActivity;
         inflater = (LayoutInflater) context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.date = date;
         this.intervalTime = intervalTime;
-        this.hashtags = hashtags;
         this.description = description;
         this.projID = projID;
+        this.hashtags = Arrays.asList(hashtags.split(","));
     }
 
     @Override
@@ -64,7 +65,7 @@ public class projectInfoListAdapter extends BaseAdapter{
             infoIndicator.setText("" + intervalTime);
         }else if(position == 2){
             titleContent = "Tags";
-            detailsContent = hashtags.toString();
+            detailsContent = hashtags.toString().replace("]", "").replace("[","");
             infoIndicator.setText("#");
         }else if(position == 3){
             titleContent = "Description";
