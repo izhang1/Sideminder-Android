@@ -1,5 +1,7 @@
 package com.app.izhang.sideminder.presenter;
 
+import android.util.Log;
+
 import com.app.izhang.sideminder.model.Project;
 
 import java.util.Date;
@@ -50,7 +52,7 @@ public class projectPresenterImpl implements projectPresenter{
         if(projHashtag.isEmpty()) return false;
 
         String hashRevised = projHashtag;
-        hashRevised.replaceAll("\\s+","");
+
         project.setHashtags(hashRevised);
         project.save();
 
