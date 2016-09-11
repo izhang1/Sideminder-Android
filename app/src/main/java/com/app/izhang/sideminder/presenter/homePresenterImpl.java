@@ -1,11 +1,16 @@
+/**
+ * homePresenterImpl.java
+ * Created By: Ivan Zhang
+ * Purpose:
+ *  Implementation of homePresenter.java to interact with the model when user is at homeActivity.java
+ */
+
 package com.app.izhang.sideminder.presenter;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import com.app.izhang.sideminder.model.Project;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 

@@ -1,13 +1,16 @@
+/**
+ * Project.java
+ * Created By: Ivan Zhang
+ * Purpose:
+ *  Model that interacts directly with the SQL database through SugarORM.
+ **/
+
 package com.app.izhang.sideminder.model;
 
 import com.orm.SugarRecord;
 
-import java.util.ArrayList;
 import java.util.Date;
 
-/**
- * Created by izhang on 6/21/16.
- */
 public class Project extends SugarRecord {
     private Date dueDate; // When the Project should be due
     private int reminderInterval; // The interval that the user should be notificed of the Project
@@ -79,7 +82,7 @@ public class Project extends SugarRecord {
     }
 
     @Override
-    public String toString() {
+    public String toString(){
         return "Title: " + title + "\n Description: " + description + " \n Due on: " + dueDate.toString();
     }
 

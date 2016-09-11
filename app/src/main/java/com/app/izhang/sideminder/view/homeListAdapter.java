@@ -1,3 +1,10 @@
+/**
+ * homeListAdapter.java
+ * Created By: Ivan Zhang
+ * Purpose:
+ *  List Adapter that populates the ListView and extends the Swiping feature implementation
+ */
+
 package com.app.izhang.sideminder.view;
 
 import android.app.Activity;

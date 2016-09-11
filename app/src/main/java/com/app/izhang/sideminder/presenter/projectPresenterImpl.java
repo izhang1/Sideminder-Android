@@ -1,3 +1,10 @@
+/**
+ * projectPresenterImpl.java
+ * Created By: Ivan Zhang
+ * Purpose:
+ *  Implements the projectPresenter.java interface. Interacts directly with the model to modify, save, and delete data.
+ */
+
 package com.app.izhang.sideminder.presenter;
 
 import android.util.Log;

@@ -1,3 +1,10 @@
+/**
+ * projectPresenter.java
+ * Created By: Ivan Zhang
+ * Purpose:
+ *  Interface to match projectActivity data interaction
+ */
+
 package com.app.izhang.sideminder.presenter;
 
 /**
@@ -5,13 +12,13 @@ package com.app.izhang.sideminder.presenter;
  */
 public interface projectPresenter {
     // Method to change interval of project
-    public boolean setInterval(long projID, int projInterval);
+    boolean setInterval(long projID, int projInterval);
 
     // Method to change deadline of project
-    public boolean setDeadline(long projID, String projDeadline);
+    boolean setDeadline(long projID, String projDeadline);
 
-    public boolean setDescription(long projID, String projDescription);
+    boolean setDescription(long projID, String projDescription);
 
-    public boolean setHashtag(long projID, String projHashtag);
+    boolean setHashtag(long projID, String projHashtag);
 
 }

@@ -1,3 +1,10 @@
+/**
+ * homeActivity.java
+ * Created By: Ivan Zhang
+ * Purpose:
+ *  Home page UI design, initialization and interaction. Passes off DB related tasks to the presenter.
+ */
+
 package com.app.izhang.sideminder.view;
 
 import android.app.DatePickerDialog;
@@ -101,16 +108,6 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         return super.onOptionsItemSelected(item);
     }
 
-    private void initHomePage(){
-        homeList = (ListView) this.findViewById(R.id.homeList);
-    }
-
-    @Override
-    public List<Project> getProjectName(){
-        List<Project> list = Project.listAll(Project.class);
-        return list;
-    }
-
     public String[] getIntervalList(){
         String[] list = {
                     "1",
@@ -186,7 +183,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
     }
 
 
-    private void setDateTimeField() {
+    public void setDateTimeField() {
         Calendar newCalendar = Calendar.getInstance();
         deadlinePicker = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -200,8 +197,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         deadlinePicker.show();
     }
 
-    private void saveData(String projName, String projDescription, String projInterval, String projDeadline){
-
+    public void saveData(String projName, String projDescription, String projInterval, String projDeadline){
         boolean added = presenter.addNewProject(projName, projDescription, projInterval, projDeadline);
         if(added){
             setAdapter();
@@ -211,7 +207,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
     }
 
 
-    private void setAdapter(){
+    public void setAdapter(){
         // TODO: 7/28/16 Pretty crude way of doing this...seek alternate way if possible
         projectsLists = presenter.getHomeData();
         String temp[] = new String[projectsLists.size()];

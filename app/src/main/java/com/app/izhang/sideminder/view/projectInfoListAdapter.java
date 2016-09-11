@@ -1,3 +1,10 @@
+/**
+ * projectInfoListAdapter.java
+ * Created By: Ivan Zhang
+ * Purpose:
+ *  List Adapter that populates the ListView in projactActivity.java. Shows necessary information regarding the side project.
+ */
+
 package com.app.izhang.sideminder.view;
 
 import android.app.Activity;
