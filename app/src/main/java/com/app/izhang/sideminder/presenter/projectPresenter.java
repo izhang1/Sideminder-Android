@@ -7,6 +7,8 @@
 
 package com.app.izhang.sideminder.presenter;
 
+import android.content.Context;
+
 /**
  * Created by ivanzhang on 8/31/16.
  */
@@ -20,5 +22,7 @@ public interface projectPresenter {
     boolean setDescription(long projID, String projDescription);
 
     boolean setHashtag(long projID, String projHashtag);
+
+    boolean setNotification(Context context, int time);
 
 }

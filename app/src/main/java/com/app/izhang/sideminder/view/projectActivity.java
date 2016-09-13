@@ -142,7 +142,8 @@ public class projectActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         projectPresenterImpl presenter = new projectPresenterImpl();
                         boolean didSetInterval = presenter.setInterval(projID, Integer.parseInt(projIntervalReminder.getSelectedItem().toString()));
-                        if(didSetInterval) initView();
+                        presenter.setNotification(getApplicationContext(), 10);
+                        if(didSetInterval  ) initView();
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
