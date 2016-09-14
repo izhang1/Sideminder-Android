@@ -85,7 +85,6 @@ public class projectPresenterImpl implements projectPresenter{
         // alarm triggers and
         //we call the method inside onRecieve() method pf Alarmreciever class
 
-
         Intent intentAlarm = new Intent(context, showNotification.class);
         // create the objt
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
