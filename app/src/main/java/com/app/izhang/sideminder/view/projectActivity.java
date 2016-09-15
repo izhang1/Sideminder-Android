@@ -94,18 +94,22 @@ public class projectActivity extends AppCompatActivity {
                 switch(i){
                     case 0:
                         Dialog deadlineDialog = createDeadlinePresenter();
+                        deadlineDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationProject;
                         deadlineDialog.show();
                         break;
                     case 1:
                         Dialog notifyDialog = createNotificationPresenter();
+                        notifyDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationProject;
                         notifyDialog.show();
                         break;
                     case 2:
                         Dialog hashtagDialog = createHashtagPresenter();
+                        hashtagDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationProject;
                         hashtagDialog.show();
                         break;
                     case 3:
                         Dialog descDialog = createDescriptionPresenter();
+                        descDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationProject;
                         descDialog.show();
                         break;
                 }
@@ -276,6 +280,8 @@ public class projectActivity extends AppCompatActivity {
                     }
                 });
         // Create the AlertDialog object and return it
+
+
         return builder.create();
     }
 
