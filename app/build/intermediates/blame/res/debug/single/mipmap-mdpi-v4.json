@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/icon_plus.png",
+        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/res/mipmap-mdpi/icon_plus.png"
+    },
+    {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/sdmrlogo256x256.png",
         "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/res/mipmap-mdpi/sdmrlogo256x256.png"
     },
