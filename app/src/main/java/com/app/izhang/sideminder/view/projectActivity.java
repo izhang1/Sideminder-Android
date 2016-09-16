@@ -4,7 +4,6 @@ package com.app.izhang.sideminder.view;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -20,7 +19,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -119,35 +117,25 @@ public class projectActivity extends AppCompatActivity {
 
     }
 
+    // TODO: 9/15/16 Implement the set time on the time edittext and get input from time and interval
     public Dialog createNotificationPresenter(){
         AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.myDialog));
 
         LayoutInflater inflater = this.getLayoutInflater();
         View dialogView = inflater.inflate(R.layout.setnotification_dialog,null);
 
-        // Deadline Init
-        final Spinner projIntervalReminder = (Spinner) dialogView.findViewById(R.id.notificationSet);
+        EditText projectInterval = (EditText) dialogView.findViewById(R.id.projInterval);
+        EditText projTime = (EditText) dialogView.findViewById(R.id.projTime);
 
-        // Spinner Populate
-        List<String> categories = Arrays.asList(getIntervalList());
-
-        // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
-
-        // Drop down layout style - list view with radio button
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
-        projIntervalReminder.setAdapter(dataAdapter);
 
         builder.setView(dialogView);
         builder.setMessage("Change Deadline")
                 .setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         projectPresenterImpl presenter = new projectPresenterImpl();
-                        boolean didSetInterval = presenter.setInterval(projID, Integer.parseInt(projIntervalReminder.getSelectedItem().toString()));
-                        presenter.setNotification(getApplicationContext(), 10);
-                        if(didSetInterval  ) initView();
+                        //boolean didSetInterval = presenter.setInterval(projID, Integer.parseInt(projIntervalReminder.getSelectedItem().toString()));
+                        //presenter.setNotification(getApplicationContext(), 10);
+                        //if(didSetInterval  ) initView();
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -196,7 +184,7 @@ public class projectActivity extends AppCompatActivity {
         View dialogView = inflater.inflate(R.layout.setdeadline_dialog,null);
 
         // Deadline Init
-        projDeadlineDate = (EditText) dialogView.findViewById(R.id.projDeadline);
+        projDeadlineDate = (EditText) dialogView.findViewById(R.id.projectDeadline);
         projDeadlineDate.setInputType(InputType.TYPE_NULL);
         projDeadlineDate.requestFocus();
         projDeadlineDate.setOnClickListener(new View.OnClickListener() {
@@ -232,7 +220,7 @@ public class projectActivity extends AppCompatActivity {
         View dialogView = inflater.inflate(R.layout.setdeadline_dialog,null);
 
         // Deadline Init
-        final EditText descriptionInput = (EditText) dialogView.findViewById(R.id.projDeadline);
+        final EditText descriptionInput = (EditText) dialogView.findViewById(R.id.projectDeadline);
         descriptionInput.setHint("New Project Description");
         descriptionInput.setInputType(InputType.TYPE_CLASS_TEXT);
 
@@ -261,7 +249,7 @@ public class projectActivity extends AppCompatActivity {
         View dialogView = inflater.inflate(R.layout.setdeadline_dialog,null);
 
         // Deadline Init
-        final EditText hashTagInput = (EditText) dialogView.findViewById(R.id.projDeadline);
+        final EditText hashTagInput = (EditText) dialogView.findViewById(R.id.projectDeadline);
         hashTagInput.setText(Project.findById(Project.class, projID).getHashtags());
         hashTagInput.setInputType(InputType.TYPE_CLASS_TEXT);
 

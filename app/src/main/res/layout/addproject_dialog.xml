@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp">
+    android:padding="18dp">
 
     <EditText
         android:layout_width="match_parent"
@@ -18,6 +18,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/projName"
         android:id="@+id/projDesc"
         android:layout_gravity="center_horizontal"
         android:hint="Project Description"
@@ -30,21 +31,24 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Reminder Intervals (In Days)"
+        android:text="Reminder Intervals In Days ( 1 to 99 )"
+        android:layout_below="@+id/projDesc"
         android:id="@+id/deadlingSpinTitle"
         android:layout_margin="5dp"
         android:layout_marginTop="5dp"
         android:textSize="15dp" />
 
-    <Spinner
-        android:layout_width="match_parent"
+    <EditText
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:id="@+id/projRemindInter"
-        android:layout_gravity="center_horizontal|left"
-        android:spinnerMode="dropdown"
-        android:layout_margin="5dp"
-        android:layout_marginTop="8dp"
-        android:popupElevation="4dp" />
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/projTime"
+        android:layout_marginLeft="5dp"
+        android:hint="8:00PM"
+        android:layout_alignEnd="@+id/projDesc"
+        android:layout_below="@+id/deadlingSpinTitle"
+        android:gravity="center" />
 
     <EditText
         android:layout_width="match_parent"
@@ -54,6 +58,35 @@
         android:id="@+id/projectDeadline"
         android:layout_gravity="center_horizontal"
         android:hint="Project Deadline"
-        android:layout_marginTop="8dp"
-        android:clickable="true" />
-</LinearLayout>
+        android:clickable="true"
+        android:layout_below="@+id/projTime"
+        android:layout_alignStart="@+id/deadlingSpinTitle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Day(s) at"
+        android:id="@+id/textView2"
+        android:layout_above="@+id/projectDeadline"
+        android:layout_toStartOf="@+id/projTime"
+        android:layout_marginBottom="8dp"
+        android:layout_alignTop="@+id/projTime"
+        android:gravity="bottom"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:maxLength="2"
+        android:ems="10"
+        android:id="@+id/projInterval"
+        android:layout_below="@+id/deadlingSpinTitle"
+        android:gravity="center"
+        android:layout_alignStart="@+id/projectDeadline"
+        android:layout_toStartOf="@+id/textView2"
+        android:hint="2" />
+
+</RelativeLayout>

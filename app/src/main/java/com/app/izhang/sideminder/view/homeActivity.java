@@ -134,19 +134,9 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
 
         final EditText projNameTV = (EditText) dialogView.findViewById(R.id.projName);
         final EditText projDescriptionTV = (EditText) dialogView.findViewById(R.id.projDesc);
-        final Spinner projReminderInterval = (Spinner) dialogView.findViewById(R.id.projRemindInter);
-
-        // Spinner Populate
-        List<String> categories = Arrays.asList(getIntervalList());
-
-        // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
-
-        // Drop down layout style - list view with radio button
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
-        projReminderInterval.setAdapter(dataAdapter);
+        final EditText projReminderInterval = (EditText) dialogView.findViewById(R.id.projRemindInter);
+        final EditText projInterval = (EditText) dialogView.findViewById(R.id.projInterval);
+        final EditText projTime = (EditText) dialogView.findViewById(R.id.projTime);
 
         // Deadline Init
         projDeadlineDate = (EditText) dialogView.findViewById(R.id.projectDeadline);
@@ -166,7 +156,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
             @Override
             public void onClick(DialogInterface dialog, int id) {
                 //// TODO: 7/21/16 Add Project Data to Database
-                saveData(projNameTV.getText().toString(), projDescriptionTV.getText().toString(),projReminderInterval.getSelectedItem().toString(), projDeadlineDate.getText().toString());
+                saveData(projNameTV.getText().toString(), projDescriptionTV.getText().toString(),projReminderInterval.getText().toString(), projDeadlineDate.getText().toString());
             }
         });
 
