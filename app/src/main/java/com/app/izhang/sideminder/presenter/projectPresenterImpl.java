@@ -35,6 +35,7 @@ public class projectPresenterImpl implements projectPresenter{
         Project project = Project.findById(Project.class, projID);
         if(project == null) return false;
 
+        // TODO: 9/15/16 Check to make sure that the interval is between 1 - 99 
         project.setReminderInterval(projInterval);
         if(project.getReminderInterval() == projInterval) project.save();
         return true;
@@ -45,6 +46,8 @@ public class projectPresenterImpl implements projectPresenter{
         Project project = Project.findById(Project.class, projID);
         if(project == null) return false;
         if(projDeadline.isEmpty()) return false;
+
+        // TODO: 9/15/16 Make sure the deadline is greater than the date here. If not, send back false.  
         Date date = new Date(projDeadline);
         project.setDueDate(date);
         project.save();
