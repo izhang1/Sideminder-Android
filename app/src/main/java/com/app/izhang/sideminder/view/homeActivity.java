@@ -136,7 +136,6 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
     @Override
     public void onClick(View v){
         // Assumes FAB button was clicked
-        Toast.makeText(getApplicationContext(), "FAB button clicked", Toast.LENGTH_LONG).show();
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
 
         LayoutInflater inflater = this.getLayoutInflater();

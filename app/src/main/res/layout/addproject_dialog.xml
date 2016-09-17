@@ -13,7 +13,9 @@
         android:singleLine="true"
         android:selectAllOnFocus="false"
         android:maxLength="40"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/material_grey_800" />
 
     <EditText
         android:layout_width="match_parent"
@@ -26,7 +28,9 @@
         android:singleLine="true"
         android:maxLength="120"
         android:inputType="text"
-        android:allowUndo="true" />
+        android:allowUndo="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/material_grey_800" />
 
     <TextView
         android:layout_width="match_parent"
@@ -49,7 +53,9 @@
         android:layout_alignEnd="@+id/projDesc"
         android:focusableInTouchMode="false"
         android:layout_below="@+id/deadlingSpinTitle"
-        android:gravity="center" />
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/material_grey_800" />
 
     <EditText
         android:layout_width="match_parent"
@@ -63,7 +69,9 @@
         android:clickable="true"
         android:layout_below="@+id/projTime"
         android:layout_alignStart="@+id/deadlingSpinTitle"
-        android:gravity="center" />
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/material_grey_800" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -90,6 +98,8 @@
         android:gravity="center"
         android:layout_alignStart="@+id/projectDeadline"
         android:layout_toStartOf="@+id/textView2"
-        android:hint="2" />
+        android:hint="2"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/material_grey_800" />
 
 </RelativeLayout>
