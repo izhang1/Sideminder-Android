@@ -8,6 +8,7 @@
 package com.app.izhang.sideminder.view;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +30,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.app.izhang.sideminder.R;
@@ -51,7 +54,9 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
     private FloatingActionButton addProjFab = null;
     private SimpleDateFormat sdf;
     private DatePickerDialog deadlinePicker;
+    private TimePickerDialog timePicker;
     private EditText projDeadlineDate;
+    private EditText projTime;
     private homeListAdapter adapter;
 
     private homePresenterImpl presenter;
@@ -81,6 +86,9 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
                 startActivity(intent);
             }
         });
+
+        createDatePickerDialog();
+        createTimePickerDialog();
 
         sdf = new SimpleDateFormat(DATE_FORMAT);
     }
@@ -134,9 +142,17 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
 
         final EditText projNameTV = (EditText) dialogView.findViewById(R.id.projName);
         final EditText projDescriptionTV = (EditText) dialogView.findViewById(R.id.projDesc);
-        final EditText projReminderInterval = (EditText) dialogView.findViewById(R.id.projRemindInter);
         final EditText projInterval = (EditText) dialogView.findViewById(R.id.projInterval);
-        final EditText projTime = (EditText) dialogView.findViewById(R.id.projTime);
+
+        // Project Time Init
+        projTime = (EditText) dialogView.findViewById(R.id.projTime);
+        projTime.setInputType(InputType.TYPE_NULL);
+        projTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                timePicker.show();
+            }
+        });
 
         // Deadline Init
         projDeadlineDate = (EditText) dialogView.findViewById(R.id.projectDeadline);
@@ -145,7 +161,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         projDeadlineDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setDateTimeField();
+                deadlinePicker.show();
             }
         });
 
@@ -156,7 +172,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
             @Override
             public void onClick(DialogInterface dialog, int id) {
                 //// TODO: 7/21/16 Add Project Data to Database
-                saveData(projNameTV.getText().toString(), projDescriptionTV.getText().toString(),projReminderInterval.getText().toString(), projDeadlineDate.getText().toString());
+                saveData(projNameTV.getText().toString(), projDescriptionTV.getText().toString(),projInterval.getText().toString(), projDeadlineDate.getText().toString());
             }
         });
 
@@ -173,7 +189,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
     }
 
 
-    public void setDateTimeField() {
+    public void createDatePickerDialog() {
         Calendar newCalendar = Calendar.getInstance();
         deadlinePicker = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -185,6 +201,33 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
 
         deadlinePicker.show();
+    }
+
+    public void createTimePickerDialog(){
+        //Use the current time as the default values for the time picker
+        final Calendar c = Calendar.getInstance();
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        int minute = c.get(Calendar.MINUTE);
+
+        //Create and return a new instance of TimePickerDialog
+        timePicker = new TimePickerDialog(this,
+                 new TimePickerDialog.OnTimeSetListener() {
+                     @Override
+                     public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
+                         if(hourOfDay > 12){
+                             if(minute < 9) projTime.setText(hourOfDay - 12+":0"+minute + " PM");
+                             projTime.setText(hourOfDay - 12+":"+minute + " PM");
+                         }else{
+                             if(minute < 9) projTime.setText(hourOfDay+":0"+minute + " AM");
+                             projTime.setText(hourOfDay+":"+minute + " AM");
+                         }
+                     }
+                 },
+                 hour,
+                 minute,
+                 DateFormat.is24HourFormat(this));
+
+        timePicker.show();
     }
 
     public void saveData(String projName, String projDescription, String projInterval, String projDeadline){

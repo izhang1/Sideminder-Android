@@ -14,7 +14,9 @@ import com.app.izhang.sideminder.model.Project;
  */
 public interface homeView {
 
-    void setDateTimeField();
+    void createDatePickerDialog();
+
+    void createTimePickerDialog();
 
     void saveData(String projName, String projDescription, String projInterval, String projDeadline);
 
