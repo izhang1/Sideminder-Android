@@ -25,7 +25,7 @@ public class homePresenterImpl implements homePresenter{
     }
 
     @Override
-    public boolean addNewProject(String projName, String projDescription, String projInterval, String projDeadline) {
+    public boolean addNewProject(String projName, String projDescription, String projInterval, String projDeadline, long projReminderTime) {
 
         // TODO: 8/13/16 Verify that the data isn't already in the system.
 
@@ -33,7 +33,7 @@ public class homePresenterImpl implements homePresenter{
         int projIntInterval = Integer.parseInt(projInterval);
 
 
-        Project newProject = new Project(date, projIntInterval, projName, projDescription, projName);
+        Project newProject = new Project(date, projIntInterval, projReminderTime, projName, projDescription, projName);
 
         long saveLog = newProject.save();
         Log.v("SaveLog", "Long Number : " + saveLog);

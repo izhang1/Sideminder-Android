@@ -17,7 +17,7 @@ public interface homePresenter {
     List<Project> getHomeData();
 
     // Method to add new project into the database
-    boolean addNewProject(String projName, String projDescription, String projInterval, String projDeadline);
+    boolean addNewProject(String projName, String projDescription, String projInterval, String projDeadline, long projReminderTime);
 
     // Method to remove project from the database
     boolean removeProject(long projId);

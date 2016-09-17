@@ -17,15 +17,17 @@ public class Project extends SugarRecord {
     private String title; // Name of the side Project
     private String description; // Description of side Project
     private String hashtags;
+    private long reminderTimeInMilli;
 
     public Project(){}
 
-    public Project(Date dueDate, int reminderInterval, String title, String description, String hashTags){
+    public Project(Date dueDate, int reminderInterval, long reminderTimeInMilli, String title, String description, String hashTags){
         this.dueDate = dueDate;
         this.reminderInterval = reminderInterval;
         this.title = title;
         this.description = description;
         this.hashtags = hashTags;
+        this.reminderTimeInMilli = reminderTimeInMilli;
     }
 
     // Getters
@@ -48,6 +50,9 @@ public class Project extends SugarRecord {
 
     public String getHashtags(){ return hashtags; }
 
+    public long getReminderTimeInMilli() {
+        return reminderTimeInMilli;
+    }
 
 
     // Setters
@@ -85,5 +90,6 @@ public class Project extends SugarRecord {
     public String toString(){
         return "Title: " + title + "\n Description: " + description + " \n Due on: " + dueDate.toString();
     }
+
 
 }

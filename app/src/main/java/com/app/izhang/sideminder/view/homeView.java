@@ -18,7 +18,7 @@ public interface homeView {
 
     void createTimePickerDialog();
 
-    void saveData(String projName, String projDescription, String projInterval, String projDeadline);
+    void saveData(String projName, String projDescription, String projInterval, String projDeadline, long projReminderTime);
 
     void setAdapter();
 

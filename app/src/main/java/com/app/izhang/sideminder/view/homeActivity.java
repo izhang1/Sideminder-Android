@@ -53,11 +53,13 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
     private ListView homeList = null;
     private FloatingActionButton addProjFab = null;
     private SimpleDateFormat sdf;
+    private Calendar deadlineDate;
     private DatePickerDialog deadlinePicker;
     private TimePickerDialog timePicker;
     private EditText projDeadlineDate;
     private EditText projTime;
     private homeListAdapter adapter;
+    private long reminderTimeInMilli;
 
     private homePresenterImpl presenter;
     List<Project> projectsLists;
@@ -171,8 +173,8 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         dialogBuilder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                //// TODO: 7/21/16 Add Project Data to Database
-                saveData(projNameTV.getText().toString(), projDescriptionTV.getText().toString(),projInterval.getText().toString(), projDeadlineDate.getText().toString());
+                String date = sdf.format(deadlineDate.getTime());
+                saveData(projNameTV.getText().toString(), projDescriptionTV.getText().toString(),projInterval.getText().toString(), date, reminderTimeInMilli);
             }
         });
 
@@ -193,20 +195,21 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         Calendar newCalendar = Calendar.getInstance();
         deadlinePicker = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                Calendar newDate = Calendar.getInstance();
-                newDate.set(year, monthOfYear, dayOfMonth);
-                projDeadlineDate.setText(sdf.format(newDate.getTime()));
+                deadlineDate = Calendar.getInstance();
+                deadlineDate.set(year, monthOfYear, dayOfMonth);
+                String date = sdf.format(deadlineDate.getTime());
+                date = date.substring(0,10);
+                projDeadlineDate.setText(date);
             }
 
         }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
 
-        deadlinePicker.show();
     }
 
     public void createTimePickerDialog(){
         //Use the current time as the default values for the time picker
         final Calendar c = Calendar.getInstance();
-        int hour = c.get(Calendar.HOUR_OF_DAY);
+        final int hour = c.get(Calendar.HOUR_OF_DAY);
         int minute = c.get(Calendar.MINUTE);
 
         //Create and return a new instance of TimePickerDialog
@@ -214,24 +217,32 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
                  new TimePickerDialog.OnTimeSetListener() {
                      @Override
                      public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
-                         if(hourOfDay > 12){
-                             if(minute < 9) projTime.setText(hourOfDay - 12+":0"+minute + " PM");
-                             projTime.setText(hourOfDay - 12+":"+minute + " PM");
-                         }else{
-                             if(minute < 9) projTime.setText(hourOfDay+":0"+minute + " AM");
-                             projTime.setText(hourOfDay+":"+minute + " AM");
+                         String ampm = "AM";
+                         int hourShown = hourOfDay;
+                         if(hourShown > 12){
+                             hourShown = hourShown - 12;
+                             ampm = "PM";
                          }
+
+                         if(minute == 0) projTime.setText(hourShown + ":" + "00" + " " + ampm);
+                         else if(minute < 10) projTime.setText(hourShown + ":" + "0" + minute + " " + ampm);
+                         else projTime.setText(hourShown + ":" + minute + " " + ampm);
+
+                         Calendar calendar = Calendar.getInstance();
+                         calendar.set(Calendar.HOUR, hourOfDay);
+                         calendar.set(Calendar.MINUTE, minute);
+                         reminderTimeInMilli = calendar.getTimeInMillis();
+
                      }
                  },
                  hour,
                  minute,
                  DateFormat.is24HourFormat(this));
 
-        timePicker.show();
     }
 
-    public void saveData(String projName, String projDescription, String projInterval, String projDeadline){
-        boolean added = presenter.addNewProject(projName, projDescription, projInterval, projDeadline);
+    public void saveData(String projName, String projDescription, String projInterval, String projDeadline, long projReminderTime){
+        boolean added = presenter.addNewProject(projName, projDescription, projInterval, projDeadline, projReminderTime);
         if(added){
             setAdapter();
         }else{

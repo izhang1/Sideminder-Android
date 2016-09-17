@@ -39,7 +39,7 @@
         android:textSize="15dp" />
 
     <EditText
-        android:layout_width="170dp"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
@@ -47,6 +47,7 @@
         android:layout_marginLeft="5dp"
         android:hint="8:00PM"
         android:layout_alignEnd="@+id/projDesc"
+        android:focusableInTouchMode="false"
         android:layout_below="@+id/deadlingSpinTitle"
         android:gravity="center" />
 
@@ -58,9 +59,11 @@
         android:id="@+id/projectDeadline"
         android:layout_gravity="center_horizontal"
         android:hint="Project Deadline"
+        android:focusableInTouchMode="false"
         android:clickable="true"
         android:layout_below="@+id/projTime"
-        android:layout_alignStart="@+id/deadlingSpinTitle" />
+        android:layout_alignStart="@+id/deadlingSpinTitle"
+        android:gravity="center" />
 
     <TextView
         android:layout_width="wrap_content"
