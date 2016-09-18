@@ -254,7 +254,7 @@ public class projectActivity extends AppCompatActivity {
         hashTagInput.setInputType(InputType.TYPE_CLASS_TEXT);
 
         builder.setView(dialogView);
-        builder.setMessage("Change Deadline - Separated by Commas")
+        builder.setMessage("Set Hashtags - Separated by Commas")
                 .setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         projectPresenterImpl projectPresenter = new projectPresenterImpl();

@@ -7,8 +7,15 @@
 
 package com.app.izhang.sideminder.model;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import com.orm.SugarRecord;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Project extends SugarRecord {
@@ -16,18 +23,28 @@ public class Project extends SugarRecord {
     private int reminderInterval; // The interval that the user should be notificed of the Project
     private String title; // Name of the side Project
     private String description; // Description of side Project
-    private String hashtags;
+    private String jsonHashtags;
     private long reminderTimeInMilli;
+
+    private String HASHTAG_ID = "HASHTAGS";
 
     public Project(){}
 
-    public Project(Date dueDate, int reminderInterval, long reminderTimeInMilli, String title, String description, String hashTags){
+    public Project(Date dueDate, int reminderInterval, long reminderTimeInMilli, String title, String description, ArrayList hashTags){
         this.dueDate = dueDate;
         this.reminderInterval = reminderInterval;
         this.title = title;
         this.description = description;
-        this.hashtags = hashTags;
         this.reminderTimeInMilli = reminderTimeInMilli;
+
+        // Save ArrayList as JSON String
+        try {
+            JSONObject json = new JSONObject();
+            json.put(HASHTAG_ID, new JSONArray(hashTags));
+            jsonHashtags = json.toString();
+        }catch(Exception e){
+            Log.e("Error Occured", e.toString());
+        }
     }
 
     // Getters
@@ -47,8 +64,6 @@ public class Project extends SugarRecord {
     public String getDescription() {
         return description;
     }
-
-    public String getHashtags(){ return hashtags; }
 
     public long getReminderTimeInMilli() {
         return reminderTimeInMilli;
@@ -73,9 +88,9 @@ public class Project extends SugarRecord {
         this.title = title;
     }
 
-    public void addHashtag(String hashtag){ this.hashtags += hashtag + ","; }
+    public void addHashtag(String hashtags){
 
-    public void setHashtags(String hashtag){ this.hashtags = hashtag; }
+    }
 
     @Override
     public boolean equals(Object o) {
