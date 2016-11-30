@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/menu/menu_home.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/res/menu/menu_home.xml"
-    },
-    {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/menu/menu_project.xml",
         "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/res/menu/menu_project.xml"
+    },
+    {
+        "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/menu/menu_home.xml",
+        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/res/menu/menu_home.xml"
     }
 ]

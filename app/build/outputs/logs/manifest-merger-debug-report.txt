@@ -1,8 +1,6 @@
 -- Merging decision tree log ---
 manifest
 ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:2:1-43:12
-	xmlns:android
-		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:2:11-69
 	package
 		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:3:5-40
 		INJECTED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml
@@ -10,62 +8,50 @@ ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android
 	android:versionName
 		INJECTED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
 		INJECTED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml
 meta-data#DATABASE
 ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:5:5-7:50
-	android:name
-		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:6:9-32
 	android:value
 		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:7:9-47
+	android:name
+		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:6:9-32
 meta-data#VERSION
 ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:8:5-10:29
-	android:name
-		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:9:9-31
 	android:value
 		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:10:9-26
+	android:name
+		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:9:9-31
 meta-data#QUERY_LOG
 ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:11:5-13:32
-	android:name
-		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:12:9-33
 	android:value
 		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:13:9-29
+	android:name
+		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:12:9-33
 meta-data#DOMAIN_PACKAGE_NAME
 ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:14:5-16:53
-	android:name
-		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:15:9-43
 	android:value
 		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:16:9-50
+	android:name
+		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:15:9-43
 uses-permission#com.android.alarm.permission.SET_ALARM
 ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:18:5-77
 	android:name
 		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:18:22-75
 application
 ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:20:5-41:19
-MERGED from [com.android.support:appcompat-v7:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
 MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:animated-vector-drawable:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
-	android:supportsRtl
-		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:24:9-35
 	android:label
 		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:23:9-41
+	android:supportsRtl
+		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:24:9-35
 	android:allowBackup
 		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:21:9-35
 	android:icon
@@ -102,34 +88,19 @@ ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android
 		ADDED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml:39:19-56
 uses-sdk
 INJECTED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:animated-vector-drawable:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:design:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:appcompat-v7:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:5:5-43
 MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:animated-vector-drawable:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:recyclerview-v7:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
 MERGED from [com.github.satyan:sugar:1.5] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.github.satyan/sugar/1.5/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:recyclerview-v7:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.4.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
 MERGED from [com.daimajia.swipelayout:library:1.2.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.daimajia.swipelayout/library/1.2.0/AndroidManifest.xml:6:5-8:41
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		INJECTED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/src/main/AndroidManifest.xml
-	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:23.3.0] /Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:23:9-75
