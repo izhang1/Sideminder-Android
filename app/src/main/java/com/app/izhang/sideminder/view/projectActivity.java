@@ -82,7 +82,7 @@ public class projectActivity extends AppCompatActivity {
         listview.setAdapter(new projectInfoListAdapter(this,
                 sdf.format(date),
                 Integer.toString(project.getReminderInterval()),
-                project.getHashtags(),
+                project.getJsonHashtags(),
                 project.getDescription(),
                 projID));
 
@@ -250,7 +250,7 @@ public class projectActivity extends AppCompatActivity {
 
         // Deadline Init
         final EditText hashTagInput = (EditText) dialogView.findViewById(R.id.projectDeadline);
-        hashTagInput.setText(Project.findById(Project.class, projID).getHashtags());
+        hashTagInput.setText(Project.findById(Project.class, projID).getJsonHashtags());
         hashTagInput.setInputType(InputType.TYPE_CLASS_TEXT);
 
         builder.setView(dialogView);

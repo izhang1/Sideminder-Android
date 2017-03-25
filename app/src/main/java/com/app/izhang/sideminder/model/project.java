@@ -107,4 +107,11 @@ public class Project extends SugarRecord {
     }
 
 
+    public String getJsonHashtags() {
+        return jsonHashtags;
+    }
+
+    public void setJsonHashtags(String jsonHashtags) {
+        this.jsonHashtags = jsonHashtags;
+    }
 }

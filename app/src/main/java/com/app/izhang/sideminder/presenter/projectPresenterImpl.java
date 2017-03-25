@@ -75,7 +75,7 @@ public class projectPresenterImpl implements projectPresenter{
 
         String hashRevised = projHashtag;
 
-        project.setHashtags(hashRevised);
+        project.setJsonHashtags(hashRevised);
         project.save();
 
         return true;

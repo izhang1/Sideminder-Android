@@ -2,7 +2,7 @@
  * homeActivity.java
  * Created By: Ivan Zhang
  * Purpose:
- *  Home page UI design, initialization and interaction. Passes off DB related tasks to the presenter.
+ * Home page UI design, initialization and interaction. Passes off DB related tasks to the presenter.
  */
 
 package com.app.izhang.sideminder.view;
@@ -20,44 +20,52 @@ import android.text.InputType;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.app.izhang.sideminder.R;
 import com.app.izhang.sideminder.model.Project;
 import com.app.izhang.sideminder.presenter.homePresenterImpl;
-import com.daimajia.swipe.SwipeLayout;
 import com.orm.SugarContext;
 
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
-public class homeActivity extends AppCompatActivity implements homeView, FloatingActionButton.OnClickListener{
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+
+public class homeActivity extends AppCompatActivity implements homeView {
 
     static final String DATE_FORMAT = "EEE MMM dd HH:mm:ss z yyyy";
     static final String PROJECT_KEY = "PROJ_ID";
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.homeFab)
+    FloatingActionButton homeFab;
 
-    private ListView homeList = null;
-    private FloatingActionButton addProjFab = null;
     private SimpleDateFormat sdf;
     private Calendar deadlineDate;
     private DatePickerDialog deadlinePicker;
     private TimePickerDialog timePicker;
-    private EditText projDeadlineDate;
-    private EditText projTime;
+
+    ListView homeList;
+
+    @BindView(R.id.projectDeadline)
+    EditText projDeadlineDate;
+
+    @BindView(R.id.projTime)
+    EditText projTime;
+
     private homeListAdapter adapter;
     private long reminderTimeInMilli;
 
@@ -71,20 +79,20 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         SugarContext.init(this);
-        homeList = (ListView) this.findViewById(R.id.homeList);
-        addProjFab = (FloatingActionButton) this.findViewById(R.id.homeFab);
+        ButterKnife.bind(this);
+
         presenter = new homePresenterImpl();
 
-        setAdapter();
+        homeList = (ListView) this.findViewById(R.id.homeList);
 
-        addProjFab.setOnClickListener(this);
+        setAdapter();
 
         homeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getApplicationContext(), projectActivity.class);
                 intent.putExtra(PROJECT_KEY, projectsLists.get(i).getId());
-                Log.v("Project Int", "int: " + i );
+                Log.v("Project Int", "int: " + i);
                 startActivity(intent);
             }
         });
@@ -118,28 +126,108 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         return super.onOptionsItemSelected(item);
     }
 
-    public String[] getIntervalList(){
+    public String[] getIntervalList() {
         String[] list = {
-                    "1",
-                    "2",
-                    "3",
-                    "5",
-                    "7",
-                    "14",
-                    "30",
-                    "60",
+                "1",
+                "2",
+                "3",
+                "5",
+                "7",
+                "14",
+                "30",
+                "60",
         };
 
         return list;
     }
 
-    @Override
-    public void onClick(View v){
+
+
+    public void createDatePickerDialog() {
+        Calendar newCalendar = Calendar.getInstance();
+        deadlinePicker = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                deadlineDate = Calendar.getInstance();
+                deadlineDate.set(year, monthOfYear, dayOfMonth);
+                String date = sdf.format(deadlineDate.getTime());
+                date = date.substring(0, 10);
+                projDeadlineDate.setText(date);
+            }
+
+        }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
+
+    }
+
+    public void createTimePickerDialog() {
+        //Use the current time as the default values for the time picker
+        final Calendar c = Calendar.getInstance();
+        final int hour = c.get(Calendar.HOUR_OF_DAY);
+        int minute = c.get(Calendar.MINUTE);
+
+        //Create and return a new instance of TimePickerDialog
+        timePicker = new TimePickerDialog(this,
+                new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
+                        String ampm = "AM";
+                        int hourShown = hourOfDay;
+                        if (hourShown > 12) {
+                            hourShown = hourShown - 12;
+                            ampm = "PM";
+                        }
+
+                        if (minute == 0) projTime.setText(hourShown + ":" + "00" + " " + ampm);
+                        else if (minute < 10)
+                            projTime.setText(hourShown + ":" + "0" + minute + " " + ampm);
+                        else projTime.setText(hourShown + ":" + minute + " " + ampm);
+
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.set(Calendar.HOUR, hourOfDay);
+                        calendar.set(Calendar.MINUTE, minute);
+                        reminderTimeInMilli = calendar.getTimeInMillis();
+
+                    }
+                },
+                hour,
+                minute,
+                DateFormat.is24HourFormat(this));
+
+    }
+
+    public void saveData(String projName, String projDescription, String projInterval, String projDeadline, long projReminderTime) {
+        boolean added = presenter.addNewProject(projName, projDescription, projInterval, projDeadline, projReminderTime);
+        if (added) {
+            setAdapter();
+        } else {
+            Toast.makeText(getApplicationContext(), "Please add the project again. An error occured.", Toast.LENGTH_LONG).show();
+        }
+    }
+
+
+    public void setAdapter() {
+        // TODO: 7/28/16 Pretty crude way of doing this...seek alternate way if possible
+        projectsLists = presenter.getHomeData();
+        String temp[] = new String[projectsLists.size()];
+        for (int i = 0; i < projectsLists.size(); i++) {
+            temp[i] = projectsLists.get(i).getTitle();
+        }
+        adapter = new homeListAdapter(this, projectsLists, temp);
+        homeList.setAdapter(adapter);
+    }
+
+    public void deleteProject(Project proj) {
+        homePresenterImpl presenter = new homePresenterImpl();
+        presenter.removeProject(proj.getId());
+        setAdapter();
+    }
+
+    @OnClick(R.id.homeFab)
+    public void onViewClicked(View view) {
         // Assumes FAB button was clicked
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
 
         LayoutInflater inflater = this.getLayoutInflater();
-        View dialogView = inflater.inflate(R.layout.addproject_dialog,null);
+        View dialogView = inflater.inflate(R.layout.addproject_dialog, null);
 
         final EditText projNameTV = (EditText) dialogView.findViewById(R.id.projName);
         final EditText projDescriptionTV = (EditText) dialogView.findViewById(R.id.projDesc);
@@ -173,7 +261,7 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
             @Override
             public void onClick(DialogInterface dialog, int id) {
                 String date = sdf.format(deadlineDate.getTime());
-                saveData(projNameTV.getText().toString(), projDescriptionTV.getText().toString(),projInterval.getText().toString(), date, reminderTimeInMilli);
+                saveData(projNameTV.getText().toString(), projDescriptionTV.getText().toString(), projInterval.getText().toString(), date, reminderTimeInMilli);
             }
         });
 
@@ -188,83 +276,4 @@ public class homeActivity extends AppCompatActivity implements homeView, Floatin
         alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         alertDialog.show();
     }
-
-
-    public void createDatePickerDialog() {
-        Calendar newCalendar = Calendar.getInstance();
-        deadlinePicker = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                deadlineDate = Calendar.getInstance();
-                deadlineDate.set(year, monthOfYear, dayOfMonth);
-                String date = sdf.format(deadlineDate.getTime());
-                date = date.substring(0,10);
-                projDeadlineDate.setText(date);
-            }
-
-        }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
-
-    }
-
-    public void createTimePickerDialog(){
-        //Use the current time as the default values for the time picker
-        final Calendar c = Calendar.getInstance();
-        final int hour = c.get(Calendar.HOUR_OF_DAY);
-        int minute = c.get(Calendar.MINUTE);
-
-        //Create and return a new instance of TimePickerDialog
-        timePicker = new TimePickerDialog(this,
-                 new TimePickerDialog.OnTimeSetListener() {
-                     @Override
-                     public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
-                         String ampm = "AM";
-                         int hourShown = hourOfDay;
-                         if(hourShown > 12){
-                             hourShown = hourShown - 12;
-                             ampm = "PM";
-                         }
-
-                         if(minute == 0) projTime.setText(hourShown + ":" + "00" + " " + ampm);
-                         else if(minute < 10) projTime.setText(hourShown + ":" + "0" + minute + " " + ampm);
-                         else projTime.setText(hourShown + ":" + minute + " " + ampm);
-
-                         Calendar calendar = Calendar.getInstance();
-                         calendar.set(Calendar.HOUR, hourOfDay);
-                         calendar.set(Calendar.MINUTE, minute);
-                         reminderTimeInMilli = calendar.getTimeInMillis();
-
-                     }
-                 },
-                 hour,
-                 minute,
-                 DateFormat.is24HourFormat(this));
-
-    }
-
-    public void saveData(String projName, String projDescription, String projInterval, String projDeadline, long projReminderTime){
-        boolean added = presenter.addNewProject(projName, projDescription, projInterval, projDeadline, projReminderTime);
-        if(added){
-            setAdapter();
-        }else{
-            Toast.makeText(getApplicationContext(), "Please add the project again. An error occured.",Toast.LENGTH_LONG).show();
-        }
-    }
-
-
-    public void setAdapter(){
-        // TODO: 7/28/16 Pretty crude way of doing this...seek alternate way if possible
-        projectsLists = presenter.getHomeData();
-        String temp[] = new String[projectsLists.size()];
-        for(int i = 0; i < projectsLists.size(); i++){
-            temp[i] = projectsLists.get(i).getTitle();
-        }
-        adapter = new homeListAdapter(this, projectsLists, temp);
-        homeList.setAdapter(adapter);
-    }
-
-    public void deleteProject(Project proj){
-        homePresenterImpl presenter = new homePresenterImpl();
-        presenter.removeProject(proj.getId());
-        setAdapter();
-    }
-
 }

@@ -45,7 +45,7 @@ public class homeListAdapter extends ArraySwipeAdapter<String> {
         final TextView deleteText = (TextView) rowView.findViewById(R.id.deleteText);
 
         final String projName = projects.get(position).getTitle();
-        final String projHash = projects.get(position).getHashtags();
+        final String projHash = projects.get(position).getDescription();
 
         if(projName != null) txtTitle.setText(projName);
         if(projHash != null) hashTitle.setText(projHash);
