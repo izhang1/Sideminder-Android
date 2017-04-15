@@ -1,14 +1,14 @@
 [
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim-v21/design_appbar_state_list_animator.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/anim-v21/design_appbar_state_list_animator.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/8abeac466b2f2401712eb2e1108c2759b42b5b6b/output/res/anim-v21/design_appbar_state_list_animator.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/anim-v21/design_bottom_sheet_slide_out.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/8abeac466b2f2401712eb2e1108c2759b42b5b6b/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/anim-v21/design_bottom_sheet_slide_in.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/8abeac466b2f2401712eb2e1108c2759b42b5b6b/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
     }
 ]

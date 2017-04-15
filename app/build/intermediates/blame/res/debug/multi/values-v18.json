@@ -11,7 +11,7 @@
                     "endOffset": 99
                 },
                 "from": {
-                    "file": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values-v18/values-v18.xml",
+                    "file": "/Users/ivanzhang/.android/build-cache/5176c2b2e77c7fb54641229c0a129fd3ac2fd79a/output/res/values-v18/values-v18.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

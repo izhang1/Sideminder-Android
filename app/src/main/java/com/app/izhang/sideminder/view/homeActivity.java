@@ -50,6 +50,7 @@ public class homeActivity extends AppCompatActivity implements homeView {
     static final String PROJECT_KEY = "PROJ_ID";
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+
     @BindView(R.id.homeFab)
     FloatingActionButton homeFab;
 
@@ -96,6 +97,7 @@ public class homeActivity extends AppCompatActivity implements homeView {
                 startActivity(intent);
             }
         });
+
 
         createDatePickerDialog();
         createTimePickerDialog();
@@ -222,7 +224,12 @@ public class homeActivity extends AppCompatActivity implements homeView {
     }
 
     @OnClick(R.id.homeFab)
-    public void onViewClicked(View view) {
+    public void homeFabClick(View view) {
+
+        if(view.getId() == R.id.homeFab){
+            Log.v("HomeFab", "HomeFab");
+        }
+
         // Assumes FAB button was clicked
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
 

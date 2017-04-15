@@ -1,58 +1,58 @@
 [
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/anim/abc_fade_in.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/5176c2b2e77c7fb54641229c0a129fd3ac2fd79a/output/res/anim/abc_fade_in.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/anim/abc_slide_out_top.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/5176c2b2e77c7fb54641229c0a129fd3ac2fd79a/output/res/anim/abc_slide_out_top.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/anim/design_fab_out.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/8abeac466b2f2401712eb2e1108c2759b42b5b6b/output/res/anim/design_fab_out.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/anim/abc_slide_out_bottom.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/5176c2b2e77c7fb54641229c0a129fd3ac2fd79a/output/res/anim/abc_slide_out_bottom.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/anim/abc_popup_enter.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/5176c2b2e77c7fb54641229c0a129fd3ac2fd79a/output/res/anim/abc_popup_enter.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/anim/abc_slide_in_bottom.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/5176c2b2e77c7fb54641229c0a129fd3ac2fd79a/output/res/anim/abc_slide_in_bottom.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/anim/abc_fade_out.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/5176c2b2e77c7fb54641229c0a129fd3ac2fd79a/output/res/anim/abc_fade_out.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/anim/design_snackbar_in.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/8abeac466b2f2401712eb2e1108c2759b42b5b6b/output/res/anim/design_snackbar_in.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/anim/abc_grow_fade_in_from_bottom.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/5176c2b2e77c7fb54641229c0a129fd3ac2fd79a/output/res/anim/abc_grow_fade_in_from_bottom.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/anim/abc_shrink_fade_out_from_bottom.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/5176c2b2e77c7fb54641229c0a129fd3ac2fd79a/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/anim/design_fab_in.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/8abeac466b2f2401712eb2e1108c2759b42b5b6b/output/res/anim/design_fab_in.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/anim/abc_slide_in_top.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/5176c2b2e77c7fb54641229c0a129fd3ac2fd79a/output/res/anim/abc_slide_in_top.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/anim/design_snackbar_out.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/8abeac466b2f2401712eb2e1108c2759b42b5b6b/output/res/anim/design_snackbar_out.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/anim/abc_popup_exit.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/5176c2b2e77c7fb54641229c0a129fd3ac2fd79a/output/res/anim/abc_popup_exit.xml"
     }
 ]

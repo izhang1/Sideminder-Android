@@ -1,22 +1,22 @@
 [
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable-v21/abc_action_bar_item_background_material.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/5176c2b2e77c7fb54641229c0a129fd3ac2fd79a/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable-v21/notification_action_background.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/5176c2b2e77c7fb54641229c0a129fd3ac2fd79a/output/res/drawable-v21/notification_action_background.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable-v21/abc_btn_colored_material.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/5176c2b2e77c7fb54641229c0a129fd3ac2fd79a/output/res/drawable-v21/abc_btn_colored_material.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable-v21/abc_edit_text_material.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/5176c2b2e77c7fb54641229c0a129fd3ac2fd79a/output/res/drawable-v21/abc_edit_text_material.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",
-        "source": "/Users/ivanzhang/Documents/Application Development/Sideminder-Android/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/drawable-v21/design_bottom_navigation_item_background.xml"
+        "source": "/Users/ivanzhang/.android/build-cache/8abeac466b2f2401712eb2e1108c2759b42b5b6b/output/res/drawable-v21/design_bottom_navigation_item_background.xml"
     }
 ]
